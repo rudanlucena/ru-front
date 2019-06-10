@@ -4,6 +4,8 @@ import { MenuComponent } from './menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { PagesRoutingModule } from '../pages-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [MenuComponent],
   imports: [
@@ -14,7 +16,8 @@ import { PagesRoutingModule } from '../pages-routing.module';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule
   ],
   exports: [MenuComponent]
 })

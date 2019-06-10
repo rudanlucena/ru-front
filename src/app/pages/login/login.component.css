@@ -1,0 +1,30 @@
+.fundo {
+    background: url('../../../assets/fundo/Fundo-iEscolar-Online-Biblioteca.jpg') no-repeat center center fixed;
+    background-size: 100%;
+    height: 100vh;
+    background-size: cover; /*Css padrão*/
+    -webkit-background-size: cover; /*Css safari e chrome*/
+    -moz-background-size: cover; /*Css firefox*/
+    -ms-background-size: cover; /*Css IE não use mer#^@%#*/
+    -o-background-size: cover; /*Css Opera*/
+}
+
+.divBotao {
+    margin-top: 7%;
+}
+
+.cardLogin {
+    margin-top: 10%;
+    width: 400px;
+    height: 300px;
+}
+
+.botaoSalvar{
+    background-color: #39B54A;
+    color: white;
+    width: 200px;
+}
+
+.espacoInput {
+    margin-top: 5%;
+}
