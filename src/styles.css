@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body { 
+    margin: 0; 
+    background-color: #808080;
+}
+
+.corCard {
+    background-color: #E6E6E6;
+}
+
+.corTitulo {
+    color: #006837
+}
+
+.botaoSalvar{
+    background-color: #39B54A;
+    color: white;
+    width: 200px;
+}
+
+.espacoInput {
+    margin-top: 5%;
+}
+
+.divBotao {
+    margin-top: 7%;
+}
+
+
+.cardLogin {
+    margin-top: 10%;
+    width: 600px;
+    height: 300px;
+    background-color: #E6E6E6;
+}
+
+.cardInicial {
+    margin-top: 5%;
+    width: 80%;
+}
