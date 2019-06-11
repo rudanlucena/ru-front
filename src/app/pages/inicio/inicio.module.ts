@@ -8,6 +8,7 @@ import { MenuModule } from '../menu/menu.module';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [InicioComponent],
@@ -17,7 +18,8 @@ import { MatMenuModule } from '@angular/material/menu';
     InicioRoutingModule,
     MatCardModule,
     FlexLayoutModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule
   ]
 })
 export class InicioModule { }

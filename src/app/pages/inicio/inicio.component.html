@@ -7,19 +7,31 @@
     <mat-card-content>
       <div fxLayout="row" fxLayoutAlign="space-evenly center">
         <div class="espacoIcones">
-          <a mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/icones/Cardápio semanal.svg" width="80px"
-              height="80px"></a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
+          <a mat-button [matMenuTriggerFor]="menuAutor">
+              <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+              <i class="material-icons md-48">
+                  copyright
+              </i>
+          </a>
+
+          <mat-menu #menuAutor="matMenu" class="mat-menu-biblioteca">
+            <button mat-menu-item>
+                <mat-icon>add_circle</mat-icon>
+                <span>Novo Autor</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>list_view</mat-icon>
+                <span>Listar Autores</span>
+            </button>
           </mat-menu>
+
         </div>
-        <div class="espacoIcones">
+       <div class="espacoIcones">
           <a mat-button [matMenuTriggerFor]="menu">
             <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
           </a>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
         </div>
@@ -28,7 +40,7 @@
             <img src="../../../assets/icones/Fornecedores.svg" width="80px" height="80px">
           </a>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
         </div>
@@ -37,11 +49,12 @@
             <img src="../../../assets/icones/Gerenciar Estoques.svg" width="80px" height="80px">
           </a>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
         </div>
       </div>
+
       <div fxLayout="row" fxLayoutAlign="space-evenly center">
         <a class="espacoIcones espacoIconesBottom">
           <img src="../../../assets/icones/Cardápio semanal.svg" width="80px" height="80px">

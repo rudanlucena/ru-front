@@ -21,3 +21,22 @@
 .cardInicial {
     width: 80%;
 }
+
+.material-icons.md-48 { font-size: 48px; color: #0071bc;}
+
+button{
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 10px ;
+    height: 100%;   
+}
+
+/deep/ button:hover{
+    background-color: darkgrey !important;   
+}
+
+/deep/ .mat-menu-biblioteca {
+    background-color: transparent;
+    box-shadow: none;
+    border: none
+}
