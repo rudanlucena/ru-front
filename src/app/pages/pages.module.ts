@@ -5,6 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { InicioModule } from './inicio/inicio.module';
 import { MenuModule } from './menu/menu.module';
 import { LoginModule } from './login/login.module';
+import { CadastroAutorModule } from './cadastro-autor/cadastro-autor.module';
 
 @NgModule({
   declarations: [],
@@ -13,7 +14,8 @@ import { LoginModule } from './login/login.module';
     CommonModule,
     PagesRoutingModule,
     LoginModule,
-    InicioModule
+    InicioModule,
+    CadastroAutorModule
   ]
 })
 export class PagesModule { }
