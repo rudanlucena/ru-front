@@ -1,6 +1,9 @@
 
-.corTitulo {
+mat-card-title {
     color: #006837;
+    font-weight: bold;
+    padding-left: 50px;
+    margin-bottom: 2%;
 }
 
 .espacoIcones {
@@ -24,6 +27,15 @@ button{
     margin-bottom: 5px;
     border-radius: 10px ;
     height: 100%;   
+}
+
+hr {
+    height:1px;
+    border:none; 
+    color:#29ABE2; 
+    background-color:#29ABE2; 
+    margin-top: 1px; 
+    margin-bottom: 0px;
 }
 
 /deep/ button:hover{
