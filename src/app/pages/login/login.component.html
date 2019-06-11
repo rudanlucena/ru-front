@@ -1,14 +1,10 @@
 <div class="fundo">
   <div fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="cardLogin">
-      <mat-card-title align="center"><b>Login</b></mat-card-title>
+    <mat-card class="loginForm">
+      <mat-card-title align="center" class="loginTitle">Login</mat-card-title>
       <form class="example-form" fxLayout="column" fxLayoutAlign="space-between stretch">
-        <mat-form-field class="espacoInput">
-          <input matInput placeholder="Login" type="text">
-        </mat-form-field>
-        <mat-form-field class="espacoInput">
-          <input matInput placeholder="Senha" type="password">
-        </mat-form-field>
+        <input class="input" placeholder="Login" type="text">
+        <input class="input espacoInput" placeholder="Senha" type="password" >
       </form>
       <div class="example-button-row" fxLayout="column" fxLayoutAlign="space-between center" class="divBotao">
         <button mat-raised-button class="botaoSalvar" routerLink="/pages/inicio"><b>Entrar</b></button>

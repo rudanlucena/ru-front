@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 85 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Gradiente_sem_nome_12);
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 18px;
+        font-family: Aller-Regular, Aller;
+        letter-spacing: -0.06em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+    </style>
+    <linearGradient id="Gradiente_sem_nome_12" data-name="Gradiente sem nome 12" y1="12.5" x2="85" y2="12.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0071bc"/>
+      <stop offset="1" stop-color="#29abe2"/>
+    </linearGradient>
+  </defs>
+  <title>Voltar</title>
+  <g id="Camada_2" data-name="Camada 2">
+    <g id="Aba_-_Meus_Diários" data-name="Aba - Meus Diários">
+      <g id="Elementos">
+        <g id="Botões_cópia" data-name="Botões cópia">
+          <g id="Voltar">
+            <path class="cls-1" d="M85,10v5A10,10,0,0,1,75,25H10A10,10,0,0,1,0,15V10A10,10,0,0,1,10,0H75A10,10,0,0,1,85,10Z"/>
+            <g>
+              <path class="cls-2" d="M13.87,8.92V7.56A.85.85,0,0,0,12.42,7L8.5,10.87a.85.85,0,0,0,0,1.2L12.42,16a.85.85,0,0,0,1.45-.59V14c4.27,0,7.25,1.36,9.38,4.35C22.4,14,19.84,9.77,13.87,8.92Z"/>
+              <text class="cls-3" transform="translate(28.25 18.04)">V<tspan class="cls-4" x="10.3" y="0">oltar</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
