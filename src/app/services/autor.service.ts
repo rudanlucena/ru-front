@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { Login } from '../models/Login';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Autor } from '../models/autor';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,15 @@ import { Login } from '../models/Login';
 
 export class AutorService {
   
-  private url = environment.host + 'usuarios/';
+  private url = environment.host+'api/v1/autores';
   constructor(private http: HttpClient) { }
 
-  public async login(login: Login): Promise<Login>{
-    return await this.http.post<Login>(this.url + 'sign-up', login).toPromise();
+  salvar(autor : Autor) : Observable<HttpResponse<Autor>>{
+    return this.http.post<Autor>(this.url, autor, {
+      headers : {
+        'Content-Type': 'application/json',
+        'Authorization': sessionStorage.getItem('token')
+      },
+      observe : 'response'});
   }
 }

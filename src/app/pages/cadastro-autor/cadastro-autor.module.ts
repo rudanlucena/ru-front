@@ -11,6 +11,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CadastroAutorComponent],
@@ -24,7 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
     NgxMaskModule.forRoot(),
     MatSelectModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ]
 })
 export class CadastroAutorModule { }
