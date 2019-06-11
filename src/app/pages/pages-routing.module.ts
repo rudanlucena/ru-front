@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: 'pages', children: [
     { path: '', loadChildren: './login/login.module#LoginModule' },
-    { path: 'inicio', loadChildren: './inicio/inicio.module#InicioModule' }
+    { path: 'inicio', loadChildren: './inicio/inicio.module#InicioModule' },
+    { path: 'cadastroAutor', loadChildren: './cadastro-autor/cadastro-autor.module#CadastroAutorModule' }
   ]}
 ];
 
