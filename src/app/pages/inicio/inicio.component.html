@@ -1,26 +1,46 @@
 <app-menu></app-menu>
-<div fxLayout="column" fxLayoutAlign="start start" >
-  <img src="../../../assets/logos/logo.svg" width="100px" height="80px" style="margin-left: 150px">
-</div>
 <div fxLayout="column" fxLayoutAlign="center center">
-  <mat-card class="corCard cardInicial">
+  <mat-card class="corCard cardInicial espacoCard">
     <mat-card-title class="corTitulo">
       Página Inicial
     </mat-card-title>
     <mat-card-content>
       <div fxLayout="row" fxLayoutAlign="space-evenly center">
-        <a class="espacoIcones">
-          <img src="../../../assets/icones/Cardápio semanal.svg" width="80px" height="80px">
-        </a>
-        <a class="espacoIcones">
-          <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
-        </a>
-        <a class="espacoIcones">
-          <img src="../../../assets/icones/Fornecedores.svg" width="80px" height="80px">
-        </a>
-        <a class="espacoIcones">
-          <img src="../../../assets/icones/Gerenciar Estoques.svg" width="80px" height="80px">
-        </a>
+        <div class="espacoIcones">
+          <a mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/icones/Cardápio semanal.svg" width="80px"
+              height="80px"></a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </div>
+        <div class="espacoIcones">
+          <a mat-button [matMenuTriggerFor]="menu">
+            <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
+          </a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </div>
+        <div class="espacoIcones">
+          <a mat-button [matMenuTriggerFor]="menu">
+            <img src="../../../assets/icones/Fornecedores.svg" width="80px" height="80px">
+          </a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </div>
+        <div class="espacoIcones">
+          <a mat-button [matMenuTriggerFor]="menu">
+            <img src="../../../assets/icones/Gerenciar Estoques.svg" width="80px" height="80px">
+          </a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-evenly center">
         <a class="espacoIcones espacoIconesBottom">

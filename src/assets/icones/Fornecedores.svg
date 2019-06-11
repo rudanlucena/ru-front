@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.81 72.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #0071bc;
+      }
+    </style>
+  </defs>
+  <title>Fornecedores</title>
+  <g id="Camada_2" data-name="Camada 2">
+    <g id="Aba_-_Página_Inicial" data-name="Aba - Página Inicial">
+      <g id="Elementos">
+        <g id="Botões">
+          <g id="Botões_Menu_de_Itens_Pop-up_" data-name="Botões Menu de Itens(Pop-up)">
+            <g id="Botões-2" data-name="Botões">
+              <g>
+                <path class="cls-1" d="M0,0H72.81V72.81H0Z"/>
+                <path class="cls-2" d="M36.4,36.4A13.24,13.24,0,1,0,23.17,23.17,13.23,13.23,0,0,0,36.4,36.4Zm0,6.62C27.57,43,9.93,47.46,9.93,56.26v3.31a3.32,3.32,0,0,0,3.31,3.31H59.57a3.32,3.32,0,0,0,3.31-3.31V56.26C62.88,47.46,45.24,43,36.4,43Z"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

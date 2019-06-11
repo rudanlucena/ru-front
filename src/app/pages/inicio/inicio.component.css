@@ -1,0 +1,23 @@
+.corCard {
+    background-color: #E6E6E6;
+}
+
+.corTitulo {
+    color: #006837;
+}
+
+.espacoIcones {
+    margin-top: 6%;
+}
+
+.espacoCard {
+    margin-top: 4%;
+}
+
+.espacoIconesBottom {
+    margin-bottom: 10%;
+}
+
+.cardInicial {
+    width: 80%;
+}

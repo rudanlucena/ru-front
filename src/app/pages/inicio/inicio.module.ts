@@ -7,6 +7,7 @@ import { MenuModule } from '../menu/menu.module';
 
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [InicioComponent],
@@ -15,7 +16,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     InicioRoutingModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatMenuModule
   ]
 })
 export class InicioModule { }
