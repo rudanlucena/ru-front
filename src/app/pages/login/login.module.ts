@@ -9,11 +9,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
     CommonModule,
+    FormsModule,
     LoginRoutingModule,
     MatToolbarModule,
     MatCardModule,

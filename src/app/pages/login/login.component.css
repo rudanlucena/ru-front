@@ -88,10 +88,11 @@ a {
     color: #29ABE2 !important;
     border-radius: 8px;
     height: 34px;
+    padding-left: 20px;
+    font: 17px/1.4 sans-serif;
 }
 
 .input::placeholder {
     color: #29ABE2;
     font: 15px/1.4 sans-serif;
-    padding-left: 10px;
 }

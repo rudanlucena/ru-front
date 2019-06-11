@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  host: 'http://192.168.2.44:8080/'
+  //host: 'http://biblioteca-dev.sa-east-1.elasticbeanstalk.com/'
 };
 
 /*
