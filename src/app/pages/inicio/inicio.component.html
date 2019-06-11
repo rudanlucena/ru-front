@@ -4,20 +4,20 @@
     <mat-card-title class="corTitulo">
       Página Inicial
     </mat-card-title>
-    <mat-card-content>
+    <mat-card-content class="mat-card-content">
       <div fxLayout="row" fxLayoutAlign="space-evenly center">
-        <div class="espacoIcones">
+        <!--<div class="espacoIcones">
           <a mat-button [matMenuTriggerFor]="menuAutor">
-              <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+              <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
               <i class="material-icons md-48">
-                  copyright
+                assignment_ind
               </i>
           </a>
 
           <mat-menu #menuAutor="matMenu" class="mat-menu-biblioteca">
             <button mat-menu-item>
                 <mat-icon>add_circle</mat-icon>
-                <span>Novo Autor</span>
+                <span>Cadastrar Autor</span>
             </button>
             <button mat-menu-item>
                 <mat-icon>list_view</mat-icon>
@@ -25,49 +25,273 @@
             </button>
           </mat-menu>
 
-        </div>
+        </div>-->
        <div class="espacoIcones">
-          <a mat-button [matMenuTriggerFor]="menu">
-            <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
+          <a mat-button [matMenuTriggerFor]="menuRegistroBibliografico">
+              <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+              <i class="material-icons md-48">
+                  book
+              </i>
           </a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>
-        </div>
-        <div class="espacoIcones">
-          <a mat-button [matMenuTriggerFor]="menu">
-            <img src="../../../assets/icones/Fornecedores.svg" width="80px" height="80px">
-          </a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>
-        </div>
-        <div class="espacoIcones">
-          <a mat-button [matMenuTriggerFor]="menu">
-            <img src="../../../assets/icones/Gerenciar Estoques.svg" width="80px" height="80px">
-          </a>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item</button>
-            <button mat-menu-item>Item 2</button>
-          </mat-menu>
-        </div>
-      </div>
 
-      <div fxLayout="row" fxLayoutAlign="space-evenly center">
-        <a class="espacoIcones espacoIconesBottom">
-          <img src="../../../assets/icones/Cardápio semanal.svg" width="80px" height="80px">
+          <mat-menu #menuRegistroBibliografico="matMenu" class="mat-menu-biblioteca">
+            <button mat-menu-item>
+                <mat-icon>add_circle</mat-icon>
+                <span>Cadastrar Registro Bibliografico</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>list_view</mat-icon>
+                <span>Listar Registros</span>
+            </button>
+          </mat-menu>
+        </div>
+
+        <!--<div class="espacoIcones">
+            <a mat-button [matMenuTriggerFor]="menuEditora">
+                <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
+                <i class="material-icons md-48">
+                  local_library
+                </i>
+            </a>
+  
+            <mat-menu #menuEditora="matMenu" class="mat-menu-biblioteca">
+              <button mat-menu-item>
+                  <mat-icon>add_circle</mat-icon>
+                  <span>Cadastrar Editora</span>
+              </button>
+              <button mat-menu-item>
+                  <mat-icon>list_view</mat-icon>
+                  <span>Listar Editoras</span>
+              </button>
+            </mat-menu>
+        </div>-->
+
+        <!--<div class="espacoIcones">
+          <a mat-button [matMenuTriggerFor]="menuAssunto">
+              <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
+              <i class="material-icons md-48">
+                question_answer
+              </i>
+          </a>
+
+          <mat-menu #menuAssunto="matMenu" class="mat-menu-biblioteca">
+            <button mat-menu-item>
+                <mat-icon>add_circle</mat-icon>
+                <span>Cadastrar Assunto</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>list_view</mat-icon>
+                <span>Listar Assunto</span>
+            </button>
+          </mat-menu>
+      </div>-->
+
+    <!--<div class="espacoIcones">
+        <a mat-button [matMenuTriggerFor]="menuInstituicaoEnsino">
+            <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
+            <i class="material-icons md-48">
+              school
+            </i>
         </a>
-        <a class="espacoIcones espacoIconesBottom">
+
+        <mat-menu #menuInstituicaoEnsino="matMenu" class="mat-menu-biblioteca">
+          <button mat-menu-item>
+              <mat-icon>add_circle</mat-icon>
+              <span>Cadastrar Instituição de Ensino</span>
+          </button>
+          <button mat-menu-item>
+              <mat-icon>list_view</mat-icon>
+              <span>Listar Instituições de Ensino</span>
+          </button>
+        </mat-menu>
+    </div>-->
+    
+
+  <!--<div class="espacoIcones">
+      <a mat-button [matMenuTriggerFor]="menuBiblioteca">
           <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
-        </a>
-        <a class="espacoIcones espacoIconesBottom">
-          <img src="../../../assets/icones/Fornecedores.svg" width="80px" height="80px">
-        </a>
-        <a class="espacoIcones espacoIconesBottom">
-          <img src="../../../assets/icones/Gerenciar Estoques.svg" width="80px" height="80px">
-        </a>
+          <i class="material-icons md-48">
+            account_balance
+          </i>
+      </a>
+
+      <mat-menu #menuBiblioteca="matMenu" class="mat-menu-biblioteca">
+        <button mat-menu-item>
+            <mat-icon>add_circle</mat-icon>
+            <span>Cadastrar Biblioteca</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>list_view</mat-icon>
+            <span>Listar Bibliotecas</span>
+        </button>
+      </mat-menu>
+  </div>-->
+
+  <!--<div class="espacoIcones">
+    <a mat-button [matMenuTriggerFor]="menuTipoBibliografico">
+        <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
+        <i class="material-icons md-48">
+          storage
+        </i>
+    </a>
+
+    <mat-menu #menuTipoBibliografico="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>add_circle</mat-icon>
+          <span>Cadastrar Tipo Bibliografico</span>
+      </button>
+      <button mat-menu-item>
+          <mat-icon>list_view</mat-icon>
+          <span>Listar Tipos Bibliograficos</span>
+      </button>
+    </mat-menu>
+  </div>-->
+
+  <div class="espacoIcones">
+    <a mat-button [matMenuTriggerFor]="menuUsuario">
+        <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+        <i class="material-icons md-48">
+          person
+        </i>
+    </a>
+
+    <mat-menu #menuUsuario="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>add_circle</mat-icon>
+          <span>Cadastrar Usuario</span>
+      </button>
+      <button mat-menu-item>
+          <mat-icon>list_view</mat-icon>
+          <span>Listar Usuarios</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>add_circle</mat-icon>
+        <span>Cadastrar Categoria Usuario</span>
+    </button>
+    </mat-menu>
+  </div>
+
+  <div class="espacoIcones">
+    <a href="#" mat-button>
+        <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+        <i class="material-icons md-48">
+          find_in_page
+        </i>
+    </a>
+
+    <!--<mat-menu #menuSearch="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>find_in_page</mat-icon>
+          <span>Pesquisar</span>
+      </button>
+    </mat-menu>-->
+  </div>
+
+</div>
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+
+
+  <div class="espacoIcones">
+    <a mat-button [matMenuTriggerFor]="menuEmprestimo">
+        <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+        <i class="material-icons md-48">
+          import_contacts
+        </i>
+    </a>
+
+    <mat-menu #menuEmprestimo="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>subdirectory_arrow_right</mat-icon>
+          <span>Emprestimos</span>
+      </button>
+      <button mat-menu-item>
+          <mat-icon>subdirectory_arrow_left</mat-icon>
+          <span>Devolução</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>refresh</mat-icon>
+        <span>Renovação</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>watch_later</mat-icon>
+      <span>Reserva</span>
+  </button>
+      <button mat-menu-item>
+        <mat-icon>warning</mat-icon>
+        <span>Multa</span>
+    </button>
+    </mat-menu>
+  </div>
+
+  <div class="espacoIcones">
+    <a href="#" mat-button>
+        <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+        <i class="material-icons md-48">
+          history
+        </i>
+    </a>
+
+    <mat-menu #menuHistorico="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>history</mat-icon>
+          <span>Ver Historico</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="espacoIcones">
+    <a href="#" mat-button>
+        <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+        <i class="material-icons md-48">
+          assignment
+        </i>
+    </a>
+
+    <!--<mat-menu #menuRelatorio="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>assignment</mat-icon>
+          <span>Relatorio</span>
+      </button>
+    </mat-menu>-->
+  </div>
+
+</div>
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+
+  <div class="espacoIcones">
+    <a href="#" mat-button>
+        <!--<img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">-->
+        <i class="material-icons md-48">
+          insert_chart
+        </i>
+    </a>
+
+    <!--<mat-menu #menuGrafico="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>insert_chart</mat-icon>
+          <span>Grafico</span>
+      </button>
+    </mat-menu>-->
+  </div>
+
+  
+
+  <!--<div class="espacoIcones">
+    <a mat-button [matMenuTriggerFor]="menuSugestao">
+        <img src="../../../assets/icones/Escola - Azul.svg" width="80px" height="80px">
+        <i class="material-icons md-48">
+          record_voice_over
+        </i>
+    </a>
+
+    <mat-menu #menuSugestao="matMenu" class="mat-menu-biblioteca">
+      <button mat-menu-item>
+          <mat-icon>view_list</mat-icon>
+          <span>Sugestões</span>
+      </button>
+    </mat-menu>
+  </div>-->
+
       </div>
     </mat-card-content>
   </mat-card>

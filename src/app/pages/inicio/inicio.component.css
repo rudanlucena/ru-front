@@ -17,7 +17,7 @@ mat-card {
     width: 80%;
 }
 
-.material-icons.md-48 { font-size: 48px; color: #0071bc;}
+.material-icons.md-48 { font-size: 70px; color: #0071bc;}
 
 button{
     background-color: white;
@@ -34,4 +34,8 @@ button{
     background-color: transparent;
     box-shadow: none;
     border: none
+}
+
+/deep/ .mat-card-content{
+    padding-bottom: 50px;   
 }
