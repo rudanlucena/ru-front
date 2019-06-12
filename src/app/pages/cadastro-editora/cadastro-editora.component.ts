@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EditoraService } from 'src/app/services/editora.service';
+import { Editora } from 'src/app/models/editora';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-editora',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroEditoraComponent implements OnInit {
 
-  constructor() { }
+  editora: Editora = new Editora();
+
+  constructor(private editoraService: EditoraService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  salvarEditora() {
+    console.log(this.editora);
+    this.editoraService.salvar(this.editora).subscribe(res => {
+      console.log('salvou');
+      this.router.navigate(['/pages/inicio']);
+    })
   }
 
 }
