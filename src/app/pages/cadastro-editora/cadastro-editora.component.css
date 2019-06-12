@@ -26,36 +26,24 @@ hr {
     margin-bottom: 0px;
 }
 
-img {
-    width: 100px;
-    height: 100px;
-    padding-left: 10px;
-}
-
-.botaoFoto {
-    background-color:#29ABE2; 
-}
-
 h4 {
     color:#006837;  
 }
 
 .example-form {
+    width: 100%;
     margin-top: 3%;
 }
 
 .example-full-width {
     width: 90%;
-}
-
-.foto {
-    padding-left: 5%;
+    margin-top: 2%;
 }
 
 .inputMenor {
+    margin-top: 2%;
     width: 80%;
 }
-
 
 .example-button-row button,
 .example-button-row a {

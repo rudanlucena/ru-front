@@ -21,31 +21,36 @@
           <input hidden type="file" #fileInput (change)="onFileChanged($event)">
         </div>
         <div fxFlex="70">
-          <form class="example-form" fxLayout="column" fxLayoutAlign="space-between stretch">
+          <form class="example-form">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="Nome"  [(ngModel)]="autor.nome" name="nome">
+              <input matInput placeholder="Nome" [(ngModel)]="autor.nome" name="nome">
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <textarea matInput placeholder="Biografia" rows="3" [(ngModel)]="autor.biografia" name="biografia"></textarea>
+              <textarea matInput placeholder="Biografia" rows="3" [(ngModel)]="autor.biografia"
+                name="biografia"></textarea>
             </mat-form-field>
-            <div>
-              <mat-form-field class="inputMenor">
-                <input matInput placeholder="Data de Nascimento" mask="00/00/0000" [(ngModel)]="data" name="data">
-              </mat-form-field>
-              <mat-form-field class="select">
-                <mat-label>Sexo</mat-label>
-                <mat-select [(ngModel)]="autor.sexo" name="sexo">
-                  <mat-option *ngFor="let item of sexo" [value]="item.value">
-                    {{item.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
+            <div fxLayout="row wrap">
+              <div fxFlex>
+                <mat-form-field class="inputMenor">
+                  <input matInput placeholder="Data de Nascimento" mask="00/00/0000" [(ngModel)]="data" name="data">
+                </mat-form-field>
+              </div>
+              <div fxFlex>
+                <mat-form-field class="inputMenor">
+                  <mat-label>Sexo</mat-label>
+                  <mat-select [(ngModel)]="autor.sexo" name="sexo">
+                    <mat-option *ngFor="let item of sexo" [value]="item.value">
+                      {{item.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
             </div>
           </form>
         </div>
       </div>
       <div class="example-button-row" align="right">
-        <button mat-raised-button (click)="salvarAutor()" >Salvar</button>
+        <button mat-raised-button (click)="salvarAutor()">Salvar</button>
       </div>
     </mat-card-content>
   </mat-card>
