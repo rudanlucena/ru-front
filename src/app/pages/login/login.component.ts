@@ -3,6 +3,7 @@ import { Login } from 'src/app/models/login';
 import { LoginService } from 'src/app/services/login.service';
 import { Token } from 'src/app/models/token';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,15 @@ export class LoginComponent implements OnInit {
         //salvando token na sessao
         sessionStorage.setItem("token", this.token.Authorization);
         this.router.navigate(['/pages/inicio']);
+      },
+      error => {
+        swal.fire({
+          html: `<h3>Não foi possível efetuar o login!</h3>`,
+          type: 'error',
+          width: 400,
+          heightAuto: true,
+          confirmButtonColor: '#C1272D'
+        })
       });
     } catch (e) {
       console.log(e);

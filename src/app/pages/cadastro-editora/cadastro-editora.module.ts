@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     NgxMaskModule.forRoot(),
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class CadastroEditoraModule { }

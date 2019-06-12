@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Autor } from 'src/app/models/autor';
 import { AutorService } from 'src/app/services/autor.service';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastro-autor',
@@ -40,9 +41,17 @@ export class CadastroAutorComponent implements OnInit {
 
   salvarAutor() {
     this.formatData();
-    console.log(this.autor);
+    //
     this.autorService.salvar(this.autor).subscribe(res => {
-      this.router.navigate(['/pages/inicio']);
+      swal.fire({
+        html: `<h3>Salvo com sucesso!</h3>`,
+        type: 'success',
+        width: 400,
+        heightAuto: true,
+        confirmButtonColor: '#39B54A'
+      }).then((result) => {
+        this.router.navigate(['/pages/inicio']);
+      })
     });
   }
 
