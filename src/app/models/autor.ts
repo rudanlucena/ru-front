@@ -1,4 +1,5 @@
 export class Autor {
+    idAutor ?: number;
     biografia ?: string;
     dataNascimento ?: string;
     foto ?: string;
