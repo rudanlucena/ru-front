@@ -24,4 +24,8 @@ export class BibliotecaService {
   salvar(biblioteca: Biblioteca): Observable<HttpResponse<Biblioteca>> {
     return this.http.post<Biblioteca>(this.url, biblioteca, { headers: httpOptions, observe: 'response' });
   }
+
+  listar(): Observable<HttpResponse<Biblioteca[]>> {
+    return this.http.get<Biblioteca[]>(this.url, { headers: httpOptions, observe: 'response' });
+  }
 }

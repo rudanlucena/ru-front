@@ -24,4 +24,8 @@ export class AssuntoService {
   salvar(assunto: Assunto): Observable<HttpResponse<Assunto>> {
     return this.http.post<Assunto>(this.url, assunto, { headers: httpOptions, observe: 'response' });
   }
+
+  listar(): Observable<HttpResponse<Assunto[]>> {
+    return this.http.get<Assunto[]>(this.url, { headers: httpOptions, observe: 'response' });
+  }
 }

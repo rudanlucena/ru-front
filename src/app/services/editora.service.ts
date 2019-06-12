@@ -23,4 +23,8 @@ export class EditoraService {
   salvar(editora: Editora): Observable<HttpResponse<Editora>> {
     return this.http.post<Editora>(this.url, editora, { headers: httpOptions, observe: 'response' });
   }
+
+  listar(): Observable<HttpResponse<Editora[]>> {
+    return this.http.get<Editora[]>(this.url, { headers: httpOptions, observe: 'response' });
+  }
 }

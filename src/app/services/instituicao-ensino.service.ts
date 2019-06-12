@@ -24,4 +24,8 @@ export class InstituicaoEnsinoService {
   salvar(instituicaoEnsino : InstituicaoEnsino): Observable<HttpResponse<InstituicaoEnsino>> {
     return this.http.post<InstituicaoEnsino>(this.url, instituicaoEnsino , { headers: httpOptions, observe: 'response' });
   }
+
+  listar(): Observable<HttpResponse<InstituicaoEnsino[]>> {
+    return this.http.get<InstituicaoEnsino[]>(this.url, { headers: httpOptions, observe: 'response' });
+  }
 }

@@ -25,4 +25,8 @@ export class AutorService {
   salvar(autor: Autor): Observable<HttpResponse<Autor>> {
     return this.http.post<Autor>(this.url, autor, { headers: httpOptions, observe: 'response' });
   }
+
+  listar(): Observable<HttpResponse<Autor[]>> {
+    return this.http.get<Autor[]>(this.url, { headers: httpOptions, observe: 'response' });
+  }
 }

@@ -24,4 +24,8 @@ export class TipoRegistroService {
   salvar(tipo : TipoResistro): Observable<HttpResponse<TipoResistro>> {
     return this.http.post<TipoResistro>(this.url, tipo , { headers: httpOptions, observe: 'response' });
   }
+
+  listar(): Observable<HttpResponse<TipoResistro[]>> {
+    return this.http.get<TipoResistro[]>(this.url, { headers: httpOptions, observe: 'response' });
+  }
 }
