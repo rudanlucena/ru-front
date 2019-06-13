@@ -11,6 +11,7 @@ import { CadastroAssuntoModule } from './cadastro-assunto/cadastro-assunto.modul
 import { CadastroBibliotecaModule } from './cadastro-biblioteca/cadastro-biblioteca.module';
 import { CadastroTipoRegistroModule } from './cadastro-tipo-registro/cadastro-tipo-registro.module';
 import { CadastroInstituicaoEnsinoModule } from './cadastro-instituicao-ensino/cadastro-instituicao-ensino.module';
+import { ListaAutorModule } from './lista-autor/lista-autor.module';
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,8 @@ import { CadastroInstituicaoEnsinoModule } from './cadastro-instituicao-ensino/c
     CadastroAssuntoModule,
     CadastroBibliotecaModule,
     CadastroTipoRegistroModule,
-    CadastroInstituicaoEnsinoModule
+    CadastroInstituicaoEnsinoModule,
+    ListaAutorModule
   ]
 })
 export class PagesModule { }

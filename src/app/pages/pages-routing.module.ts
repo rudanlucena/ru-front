@@ -10,7 +10,8 @@ const routes: Routes = [
     { path: 'cadastroAssunto', loadChildren: './cadastro-assunto/cadastro-assunto.module#CadastroAssuntoModule' },
     { path: 'cadastroBiblioteca', loadChildren: './cadastro-biblioteca/cadastro-biblioteca.module#CadastroBibliotecaModule'},
     { path: 'cadastroTipoRegistro', loadChildren: './cadastro-tipo-registro/cadastro-tipo-registro.module#CadastroTipoRegistroModule'},
-    { path: 'cadastroInstituicao', loadChildren: './cadastro-instituicao-ensino/cadastro-instituicao-ensino.module#CadastroInstituicaoEnsinoModule'}
+    { path: 'cadastroInstituicao', loadChildren: './cadastro-instituicao-ensino/cadastro-instituicao-ensino.module#CadastroInstituicaoEnsinoModule'},
+    { path: 'listaAutor', loadChildren: './lista-autor/lista-autor.module#ListaAutorModule'}
   ]}
 ];
 
