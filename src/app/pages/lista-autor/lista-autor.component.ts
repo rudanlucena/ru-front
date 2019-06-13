@@ -9,13 +9,16 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
   styleUrls: ['./lista-autor.component.css']
 })
 export class ListaAutorComponent implements OnInit {
+
   autores: MatTableDataSource<Autor>;
   displayedColumns: string[] = ['nome'];
+  loader = 'none';
   
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   constructor(private autorService: AutorService) { }
 
   ngOnInit() {
+    this.displayLoader();
     this.lista();
   }
 
@@ -23,6 +26,7 @@ export class ListaAutorComponent implements OnInit {
     this.autorService.listar().subscribe(
       res => {
         this.autores = new MatTableDataSource<Autor>(res.body);
+        this.displayLoader();
         this.autores.paginator = this.paginator;
         console.log(this.autores);
       }
@@ -31,5 +35,13 @@ export class ListaAutorComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.autores.filter = filterValue.trim().toLowerCase();
+  }
+
+   //verificando o loader
+   displayLoader() {
+    if (this.loader == 'block')
+      this.loader = 'none';
+    else
+      this.loader = 'block';
   }
 }
