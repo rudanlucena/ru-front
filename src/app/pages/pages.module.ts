@@ -7,6 +7,7 @@ import { MenuModule } from './menu/menu.module';
 import { LoginModule } from './login/login.module';
 import { CadastroAutorModule } from './cadastro-autor/cadastro-autor.module';
 import { CadastroEditoraModule } from './cadastro-editora/cadastro-editora.module';
+import { CadastroAssuntoModule } from './cadastro-assunto/cadastro-assunto.module';
 
 @NgModule({
   declarations: [],
@@ -17,7 +18,8 @@ import { CadastroEditoraModule } from './cadastro-editora/cadastro-editora.modul
     LoginModule,
     InicioModule,
     CadastroAutorModule,
-    CadastroEditoraModule
+    CadastroEditoraModule,
+    CadastroAssuntoModule
   ]
 })
 export class PagesModule { }

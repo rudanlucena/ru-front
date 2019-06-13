@@ -42,17 +42,27 @@ export class CadastroAutorComponent implements OnInit {
   salvarAutor() {
     this.formatData();
     //
-    this.autorService.salvar(this.autor).subscribe(res => {
-      swal.fire({
-        html: `<h3>Salvo com sucesso!</h3>`,
-        type: 'success',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#39B54A'
-      }).then((result) => {
-        this.router.navigate(['/pages/inicio']);
-      })
-    });
+    this.autorService.salvar(this.autor).subscribe(
+      res => {
+        swal.fire({
+          html: `<h3>Salvo com sucesso!</h3>`,
+          type: 'success',
+          width: 400,
+          heightAuto: true,
+          confirmButtonColor: '#39B54A'
+        }).then((result) => {
+          this.router.navigate(['/pages/inicio']);
+        })
+      },
+      error => {
+        swal.fire({
+          html: `<h3>Não foi possível salvar o autor!</h3>`,
+          type: 'error',
+          width: 400,
+          heightAuto: true,
+          confirmButtonColor: '#C1272D'
+        })
+      });
   }
 
   formatData() {
