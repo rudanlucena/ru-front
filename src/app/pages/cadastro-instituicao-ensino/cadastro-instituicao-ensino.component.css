@@ -31,21 +31,32 @@ h4 {
 }
 
 .example-form {
+    width: 80%;
     margin-top: 3%;
 }
 
 .example-full-width {
-    width: 90%;
+    width: 95%;
 }
 
 .inputMenor {
     margin-top: 2%;
-    width: 70%;
+    width: 90%;
 }
+
 
 @media (max-width: 476px) {
     .inputMenor {
-        width: 90%;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+
+    .example-form {
+        width: 100%;
+        margin-top: 3%;
     }
 }
 

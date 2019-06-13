@@ -10,11 +10,10 @@ import { CadastroEditoraModule } from './cadastro-editora/cadastro-editora.modul
 import { CadastroAssuntoModule } from './cadastro-assunto/cadastro-assunto.module';
 import { CadastroBibliotecaModule } from './cadastro-biblioteca/cadastro-biblioteca.module';
 import { CadastroTipoRegistroModule } from './cadastro-tipo-registro/cadastro-tipo-registro.module';
-import { CadastroInstituicaoEnsinoComponent } from './cadastro-instituicao-ensino/cadastro-instituicao-ensino.component';
 import { CadastroInstituicaoEnsinoModule } from './cadastro-instituicao-ensino/cadastro-instituicao-ensino.module';
 
 @NgModule({
-  declarations: [CadastroInstituicaoEnsinoComponent],
+  declarations: [],
   imports: [
     MenuModule,
     CommonModule,

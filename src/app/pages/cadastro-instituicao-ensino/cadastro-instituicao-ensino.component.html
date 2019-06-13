@@ -2,7 +2,7 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <mat-card>
     <mat-card-title>
-      Cadastro de Biblioteca
+      Cadastro de Instituição de Ensino
       <div>
         <a routerLink="/pages/inicio">
           <img class="botaoVoltar" src="../../../assets/botoes/Voltar.svg">
@@ -14,32 +14,72 @@
       <div align="center">
         <form class="example-form">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Nome" name="nome">
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Setor" name="setor" >
+            <input matInput placeholder="Nome" name="nome" [(ngModel)]="instituicao.nome">
           </mat-form-field>
           <div fxLayout="row wrap">
             <div fxFlex>
               <mat-form-field class="inputMenor">
-                <input matInput placeholder="Telefone" mask="(00) 0000-0000" name="telefoneFixo">
+                <input matInput placeholder="CNPJ" name="cnpj" mask="00.000.000/0000-00" [(ngModel)]="instituicao.cnpj">
               </mat-form-field>
             </div>
             <div fxFlex>
               <mat-form-field class="inputMenor">
-                <input matInput placeholder="Celular 1" mask="(00) 0 0000-0000" name="telefoneCelular1">
+                <input matInput placeholder="CEP" name="cep" mask="00000-000" [(ngModel)]="instituicao.endereco.cep">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap">
+            <div fxFlex>
+              <mat-form-field class="inputMenor">
+                <input matInput placeholder="Cidade" name="cidade" [(ngModel)]="instituicao.endereco.cidade">
               </mat-form-field>
             </div>
             <div fxFlex>
               <mat-form-field class="inputMenor">
-                <input matInput placeholder="Celular 2" mask="(00) 0 0000-0000" name="telefoneCelular2" >
+                <input matInput placeholder="Logradouro" name="logradouro" [(ngModel)]="instituicao.endereco.logradouro">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap">
+            <div fxFlex>
+              <mat-form-field class="inputMenor">
+                <input matInput placeholder="Bairro" name="bairro" [(ngModel)]="instituicao.endereco.bairro">
+              </mat-form-field>
+            </div>
+            <div fxFlex>
+              <mat-form-field class="inputMenor">
+                <input matInput placeholder="Estado" name="estado" [(ngModel)]="instituicao.endereco.estado">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap">
+            <div fxFlex>
+              <mat-form-field class="inputMenor">
+                <input matInput placeholder="Número" name="numero" [(ngModel)]="instituicao.endereco.numero">
+              </mat-form-field>
+            </div>
+            <div fxFlex>
+              <mat-form-field class="inputMenor">
+                <input matInput placeholder="Zona" name="zona" [(ngModel)]="instituicao.endereco.zona">
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row wrap">
+            <div fxFlex>
+              <mat-form-field class="inputMenor">
+                <input matInput placeholder="Telefone" name="telefoneFixo" mask="(00) 0000-0000" [(ngModel)]="instituicao.telefoneFixo">
+              </mat-form-field>
+            </div>
+            <div fxFlex>
+              <mat-form-field class="inputMenor">
+                <input matInput placeholder="Celular" name="telefoneCelular" mask="(00) 0 0000-0000" [(ngModel)]="instituicao.telefoneCelular">
               </mat-form-field>
             </div>
           </div>
         </form>
       </div>
       <div class="example-button-row" align="right">
-        <button mat-raised-button (click)="salvarBiblioteca()">Salvar</button>
+        <button mat-raised-button (click)="salvarInstituicao()">Salvar</button>
       </div>
     </mat-card-content>
   </mat-card>

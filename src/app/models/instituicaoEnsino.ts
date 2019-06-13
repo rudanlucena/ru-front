@@ -7,4 +7,8 @@ export class InstituicaoEnsino{
     endereco ?: Endereco;
     telefoneFixo ?: string;
     telefoneCelular ?: string;
+
+    constructor(){
+        this.endereco = new Endereco();
+    }
 }
