@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { TipoRegistroRoutingModule } from './tipo-registro-routing.module';
 import { CadastroTipoRegistroModule } from './cadastro-tipo-registro/cadastro-tipo-registro.module';
+import { ListaTipoRegistroModule } from './lista-tipo-registro/lista-tipo-registro.module';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     TipoRegistroRoutingModule,
-    CadastroTipoRegistroModule
+    CadastroTipoRegistroModule,
+    ListaTipoRegistroModule
   ]
 })
 export class TipoRegistroModule { }
