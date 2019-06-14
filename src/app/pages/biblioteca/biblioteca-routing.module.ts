@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'biblioteca', children: [
-    //{path: '', redirectTo: 'lista', pathMatch: 'full'},
+    {path: '', redirectTo: 'lista', pathMatch: 'full'},
+    { path: 'lista', loadChildren: './lista-biblioteca/lista-biblioteca.module#ListaBibliotecaModule'},
     { path: 'cadastro', loadChildren: './cadastro-biblioteca/cadastro-biblioteca.module#CadastroBibliotecaModule'},
   ]}
 ];
