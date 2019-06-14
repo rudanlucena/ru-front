@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CadastroTipoRegistroComponent } from './cadastro-tipo-registro.component';
+import { CadastroAutorComponent } from './cadastro-autor.component';
 
 const routes: Routes = [
-  {path: 'cadastroTipoRegistro', component: CadastroTipoRegistroComponent}
+  {path: 'cadastro', component: CadastroAutorComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CadastroTipoRegistroRoutingModule { }
+export class CadastroAutorRoutingModule { }

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CadastroBibliotecaRoutingModule } from './cadastro-biblioteca-routing.module';
-import { CadastroBibliotecaComponent } from './cadastro-biblioteca.component';
+import { CadastroAutorRoutingModule } from './cadastro-autor-routing.module';
+import { CadastroAutorComponent } from './cadastro-autor.component';
 import { MatCardModule } from '@angular/material/card';
-import { MenuModule } from '../menu/menu.module';
+import { MenuModule } from '../../menu/menu.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
 import { NgxMaskModule } from 'ngx-mask';
@@ -14,11 +14,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CadastroBibliotecaComponent],
+  declarations: [CadastroAutorComponent],
   imports: [
     MenuModule,
     CommonModule,
-    CadastroBibliotecaRoutingModule,
+    CadastroAutorRoutingModule,
     MatCardModule,
     FlexLayoutModule,
     MatInputModule,
@@ -29,4 +29,4 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ]
 })
-export class CadastroBibliotecaModule { }
+export class CadastroAutorModule { }

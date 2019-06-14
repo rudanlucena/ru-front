@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CadastroAutorComponent } from './cadastro-autor.component';
+import { ListaAutorComponent } from './lista-autor.component';
 
 const routes: Routes = [
-  {path: 'cadastroAutor', component: CadastroAutorComponent}
+  {path:'', component: ListaAutorComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CadastroAutorRoutingModule { }
+export class ListaAutorRoutingModule { }
