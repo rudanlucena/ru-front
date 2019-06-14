@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AutorService } from 'src/app/services/autor.service';
 import { Autor } from 'src/app/models/autor';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-autor',
@@ -29,6 +30,15 @@ export class ListaAutorComponent implements OnInit {
         this.displayLoader();
         this.autores.paginator = this.paginator;
         console.log(this.autores);
+      },
+      error => {
+        swal.fire({
+          html: `<h3>Não foi possível carregar a lista!</h3>`,
+          type: 'error',
+          width: 400,
+          heightAuto: true,
+          confirmButtonColor: '#C1272D'
+        })
       }
     );
   }
