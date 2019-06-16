@@ -26,5 +26,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatInputModule,
     MatProgressSpinnerModule
   ]
+  ,
+  exports:[
+    ListaAssuntoComponent
+  ]
 })
 export class ListaAssuntoModule { }

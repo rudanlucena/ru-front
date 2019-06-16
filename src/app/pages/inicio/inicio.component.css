@@ -15,9 +15,9 @@ mat-card-title {
 }
 
 mat-card {
-    background-color: #E6E6E6;
-    margin-top: 5%;
-    width: 80%;
+    margin-top: 1%;
+    width: 90%;
+    z-index: 2;
 }
 
 .material-icons.md-48 { font-size: 70px; color: #0071bc;}
@@ -50,4 +50,16 @@ hr {
 
 /deep/ .mat-card-content{
     padding-bottom: 50px;   
+}
+
+.menu-label{
+    color: #0071bc;
+    border: 1px solid #0071bc;
+    border-radius: 10px ;
+    padding-left:  10px;
+    padding-right:  10px;
+}
+
+.espacoIcones a{
+    text-decoration: none
 }

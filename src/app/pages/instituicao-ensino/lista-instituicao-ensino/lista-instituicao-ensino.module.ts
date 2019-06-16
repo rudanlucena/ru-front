@@ -11,6 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CadastroInstituicaoEnsinoComponent } from '../cadastro-instituicao-ensino/cadastro-instituicao-ensino.component';
 
 @NgModule({
   declarations: [ListaInstituicaoEnsinoComponent],
@@ -25,6 +26,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule
+  ]
+  ,
+  exports:[
+    ListaInstituicaoEnsinoComponent
   ]
 })
 export class ListaInstituicaoEnsinoModule { }

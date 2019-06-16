@@ -26,5 +26,9 @@ import { MenuModule } from '../../menu/menu.module';
     MatIconModule,
     FormsModule,
   ]
+  ,
+  exports:[
+    CadastroEditoraComponent
+  ]
 })
 export class CadastroEditoraModule { }

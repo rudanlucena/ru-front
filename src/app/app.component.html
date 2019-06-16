@@ -1,1 +1,169 @@
-<router-outlet></router-outlet>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">Biblioteca</h1>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav opened #snav id="snav" [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="registroBibliografico">
+            <i class="material-icons md-48">book</i><span class="label-menu"> Material</span>
+            </button>
+  
+          <mat-menu #registroBibliografico="matMenu">
+            <button mat-menu-item [routerLink]="['#']">
+              <mat-icon>add_circle</mat-icon>Cadastrar Material
+            </button>
+            <button mat-menu-item [routerLink]="['#']">
+              <mat-icon>list_view</mat-icon>Listar Materiais
+            </button>
+            <button mat-menu-item [routerLink]="['/tipoRegistro/cadastro']">
+                <mat-icon>add_circle</mat-icon>Cadastrar Tipo Material
+            </button>
+            <button mat-menu-item [routerLink]="['/tipoRegistro']">
+                <mat-icon>list_view</mat-icon>Listar Tipos
+              </button>
+          </mat-menu>
+  
+  
+  
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="autor">
+            <i class="material-icons md-48">assignment_ind</i><span class="label-menu"> Autor</span>
+          </button>
+  
+          <mat-menu #autor="matMenu">
+            <button mat-menu-item [routerLink]="['/autor/cadastro']">
+              <mat-icon>add_circle</mat-icon>Cadastrar Autor</button>
+            <button mat-menu-item [routerLink]="['/autor']">
+              <mat-icon>list_view</mat-icon>Listar Autores</button>
+          </mat-menu>
+
+
+
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="biblioteca">
+              <i class="material-icons md-48">account_balance</i><span class="label-menu"> Biblioteca</span>
+            </button>
+    
+            <mat-menu #biblioteca="matMenu">
+              <button mat-menu-item [routerLink]="['/biblioteca/cadastro']">
+                  <mat-icon>add_circle</mat-icon>Cadastrar Biblioteca
+              </button>
+              <button mat-menu-item [routerLink]="['/biblioteca']">
+                  <mat-icon>list_view</mat-icon>Listar Bibliotecas
+              </button>
+            </mat-menu>
+
+            <button class="item-menu"  mat-button  [matMenuTriggerFor]="instituicaoEnsino">
+                <i class="material-icons md-48">school</i><span class="label-menu"> Instituicão Ensino</span>
+                </button>
+      
+              <mat-menu #instituicaoEnsino="matMenu">
+                <button mat-menu-item [routerLink]="['/instituicaoEnsino/cadastro']">
+                  <mat-icon>add_circle</mat-icon>Cadastrar Instituição</button>
+                <button mat-menu-item [routerLink]="['/instituicaoEnsino']">
+                  <mat-icon>list_view</mat-icon>Listar Instituições</button>
+              </mat-menu>
+
+              <button class="item-menu"  mat-button  [matMenuTriggerFor]="assunto">
+                  <i class="material-icons md-48">font_download</i><span class="label-menu"> Assunto</span>
+                </button>
+        
+                <mat-menu #assunto="matMenu">
+                    <button mat-menu-item [routerLink]="['/assunto/cadastro']">
+                        <mat-icon>add_circle</mat-icon>Cadastrar Assunto
+                    </button>
+                    <button mat-menu-item [routerLink]="['/assunto']">
+                        <mat-icon>list_view</mat-icon>Listar Assuntos
+                    </button>
+                </mat-menu>
+  
+  
+          
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="editora">
+            <i class="material-icons md-48">local_library</i><span class="label-menu"> Editora</span>
+            </button>
+  
+          <mat-menu #editora="matMenu">
+            <button mat-menu-item>
+              <mat-icon>add_circle</mat-icon>Cadastrar Editora</button>
+            <button mat-menu-item>
+              <mat-icon>list_view</mat-icon>Listar Editoras</button>
+          </mat-menu>
+  
+  
+  
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="exemplar">
+            <i class="material-icons md-48">explicit</i><span class="label-menu"> Exemplar</span>
+            </button>
+  
+          <mat-menu #exemplar="matMenu">
+            <button mat-menu-item>
+              <mat-icon>add_circle</mat-icon>Cadastrar Exemplar</button>
+            <button mat-menu-item>
+              <mat-icon>list_view</mat-icon>Listar Exemplares</button>
+          </mat-menu>
+  
+  
+  
+          
+
+          
+
+          <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="tipoRegistro">
+            <i class="material-icons md-48">note_add</i><span class="label-menu"> Tipo Material</span>
+          </button>
+  
+          <mat-menu #tipoRegistro="matMenu">
+          </mat-menu>-->
+
+          
+
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="usuario">
+            <i class="material-icons md-48">person</i><span class="label-menu"> Usuário</span>
+          </button>
+  
+          <mat-menu #usuario="matMenu">
+          </mat-menu>
+
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="sugestao">
+            <i class="material-icons md-48">record_voice_over</i><span class="label-menu"> Sugestão</span>
+          </button>
+  
+          <mat-menu #sugestao="matMenu">
+          </mat-menu>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content id="sidenav-content">
+        <router-outlet></router-outlet>
+
+        <!--<app-inicio></app-inicio>-->
+
+        <!--<app-cadastro-assunto></app-cadastro-assunto>-->
+        <!--<app-lista-assunto></app-lista-assunto>-->
+
+        <!--<app-cadastro-autor></app-cadastro-autor>-->
+        <!--<app-lista-autor></app-lista-autor>-->
+
+        <!--<app-cadastro-biblioteca></app-cadastro-biblioteca>-->
+        <!--<app-lista-biblioteca></app-lista-biblioteca>-->
+
+        <!--<app-cadastro-tipo-registro></app-cadastro-tipo-registro>-->
+        <!--<app-lista-tipo-registro></app-lista-tipo-registro>-->
+
+        <!--<app-cadastro-instituicao-ensino></app-cadastro-instituicao-ensino>-->
+        <!--<app-lista-instituicao-ensino></app-lista-instituicao-ensino>-->
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+  <!--<mat-toolbar class="corMenu">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" >
+      <img src="../../../assets/logos/Logo - iEscolar.png" height="45px" width="30px">
+    </mat-toolbar-row>
+  </mat-toolbar>-->

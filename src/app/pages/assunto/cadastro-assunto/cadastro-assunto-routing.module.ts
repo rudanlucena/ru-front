@@ -5,6 +5,7 @@ import { CadastroAssuntoComponent } from './cadastro-assunto.component';
 const routes: Routes = [
   { path:'cadastro', component: CadastroAssuntoComponent}
 ];
+export const ROUTES = RouterModule.forChild(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -11,6 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CadastroAutorComponent } from '../cadastro-autor/cadastro-autor.component';
 
 
 @NgModule({
@@ -26,6 +27,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule
+  ],
+  exports:[
+    ListaAutorComponent
   ]
 })
 export class ListaAutorModule { }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CadastroAutorRoutingModule } from './cadastro-autor-routing.module';
+import { CadastroAutorRoutingModule, ROUTES } from './cadastro-autor-routing.module';
 import { CadastroAutorComponent } from './cadastro-autor.component';
 import { MatCardModule } from '@angular/material/card';
 import { MenuModule } from '../../menu/menu.module';
@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [CadastroAutorComponent],
   imports: [
+    ROUTES,
     MenuModule,
     CommonModule,
     CadastroAutorRoutingModule,
@@ -27,6 +28,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     FormsModule
+  ],
+  exports:[
+    CadastroAutorComponent
   ]
 })
 export class CadastroAutorModule { }

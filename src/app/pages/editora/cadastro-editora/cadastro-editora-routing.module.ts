@@ -5,6 +5,7 @@ import { CadastroEditoraComponent } from './cadastro-editora.component';
 const routes: Routes = [
   {path: 'cadastro', component: CadastroEditoraComponent}
 ];
+export const ROUTES = RouterModule.forChild(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

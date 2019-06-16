@@ -11,6 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CadastroEditoraComponent } from '../cadastro-editora/cadastro-editora.component';
 
 @NgModule({
   declarations: [ListaEditoraComponent],
@@ -25,6 +26,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule
+  ]
+  ,
+  exports:[
+    ListaEditoraComponent
   ]
 })
 export class ListaEditoraModule { }

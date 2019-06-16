@@ -23,5 +23,9 @@ import { MenuModule } from '../../menu/menu.module';
     MatIconModule,
     FormsModule
   ]
+  ,
+  exports:[
+    CadastroInstituicaoEnsinoComponent
+  ]
 })
 export class CadastroInstituicaoEnsinoModule { }

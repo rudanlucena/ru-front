@@ -5,6 +5,7 @@ import { CadastroAutorComponent } from './cadastro-autor.component';
 const routes: Routes = [
   {path: 'cadastro', component: CadastroAutorComponent}
 ];
+export const ROUTES = RouterModule.forChild(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

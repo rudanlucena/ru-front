@@ -5,6 +5,7 @@ import { CadastroBibliotecaComponent } from './cadastro-biblioteca.component';
 const routes: Routes = [
   {path: 'cadastro', component: CadastroBibliotecaComponent}
 ];
+export const ROUTES = RouterModule.forChild(routes);
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

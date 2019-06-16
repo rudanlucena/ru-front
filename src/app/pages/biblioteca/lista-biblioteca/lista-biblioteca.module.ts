@@ -11,10 +11,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CadastroBibliotecaComponent } from '../cadastro-biblioteca/cadastro-biblioteca.component';
+import { ROUTES } from '../cadastro-biblioteca/cadastro-biblioteca-routing.module';
 
 @NgModule({
   declarations: [ListaBibliotecaComponent],
   imports: [
+    ROUTES,
     MenuModule,
     CommonModule,
     ListaBibliotecaRoutingModule,
@@ -25,6 +28,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule
+  ]
+  ,
+  exports:[
+    ListaBibliotecaComponent
   ]
 })
 export class ListaBibliotecaModule { }

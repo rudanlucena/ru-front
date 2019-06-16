@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CadastroAssuntoRoutingModule } from './cadastro-assunto-routing.module';
+import { CadastroAssuntoRoutingModule, ROUTES } from './cadastro-assunto-routing.module';
 import { CadastroAssuntoComponent } from './cadastro-assunto.component';
 import { MatCardModule } from '@angular/material/card';
 import { MenuModule } from '../../menu/menu.module';
@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [CadastroAssuntoComponent],
@@ -27,6 +28,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     FormsModule
+  ],
+  exports:[
+    CadastroAssuntoComponent
   ]
 })
 export class CadastroAssuntoModule { }

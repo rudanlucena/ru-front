@@ -28,6 +28,9 @@ import { MenuModule } from '../../menu/menu.module';
     MatButtonModule,
     MatIconModule,
     FormsModule
+  ],
+  exports:[
+    CadastroTipoRegistroComponent
   ]
 })
 export class CadastroTipoRegistroModule { }
