@@ -1,8 +1,8 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
       <button mat-icon-button (click)="snav.toggle()">
-        <mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name">Biblioteca</h1>
+        <mat-icon>restaurant</mat-icon></button>
+      <h1 class="example-app-name">Manager RU</h1>
     </mat-toolbar>
   
     <mat-sidenav-container class="example-sidenav-container"
@@ -10,54 +10,68 @@
       <mat-sidenav opened #snav id="snav" [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>
-          <button class="item-menu"  mat-button  [matMenuTriggerFor]="registroBibliografico">
-            <i class="material-icons md-48">book</i><span class="label-menu"> Material</span>
-            </button>
-  
-          <mat-menu #registroBibliografico="matMenu">
-            <button mat-menu-item [routerLink]="['#']">
-              <mat-icon>add_circle</mat-icon>Cadastrar Material
-            </button>
-            <button mat-menu-item [routerLink]="['#']">
-              <mat-icon>list_view</mat-icon>Listar Materiais
-            </button>
-            <button mat-menu-item [routerLink]="['/tipoRegistro/cadastro']">
-                <mat-icon>add_circle</mat-icon>Cadastrar Tipo Material
-            </button>
-            <button mat-menu-item [routerLink]="['/tipoRegistro']">
-                <mat-icon>list_view</mat-icon>Listar Tipos
-              </button>
-          </mat-menu>
-  
-  
-  
           <button class="item-menu"  mat-button  [matMenuTriggerFor]="autor">
-            <i class="material-icons md-48">assignment_ind</i><span class="label-menu"> Autor</span>
+            <i class="material-icons md-48">person</i><span class="label-menu"> Aluno</span>
           </button>
   
           <mat-menu #autor="matMenu">
-            <button mat-menu-item [routerLink]="['/autor/cadastro']">
-              <mat-icon>add_circle</mat-icon>Cadastrar Autor</button>
-            <button mat-menu-item [routerLink]="['/autor']">
-              <mat-icon>list_view</mat-icon>Listar Autores</button>
+              <button mat-menu-item [routerLink]="['/aluno/cadastro']">
+                <mat-icon>sync</mat-icon>Atualizar Via SUAP</button>
+            <button mat-menu-item [routerLink]="['/aluno/lista']">
+              <mat-icon>list_view</mat-icon>Listar Alunos</button>
           </mat-menu>
 
 
 
           <button class="item-menu"  mat-button  [matMenuTriggerFor]="biblioteca">
-              <i class="material-icons md-48">account_balance</i><span class="label-menu"> Biblioteca</span>
+              <i class="material-icons md-48">format_list_numbered</i><span class="label-menu"> Comensais</span>
             </button>
     
             <mat-menu #biblioteca="matMenu">
-              <button mat-menu-item [routerLink]="['/biblioteca/cadastro']">
-                  <mat-icon>add_circle</mat-icon>Cadastrar Biblioteca
-              </button>
-              <button mat-menu-item [routerLink]="['/biblioteca']">
-                  <mat-icon>list_view</mat-icon>Listar Bibliotecas
+              <button mat-menu-item [routerLink]="['/comensais']">
+                  <mat-icon>list_view</mat-icon>Listar Comensais
               </button>
             </mat-menu>
 
-            <button class="item-menu"  mat-button  [matMenuTriggerFor]="instituicaoEnsino">
+            <button class="item-menu"  mat-button  [matMenuTriggerFor]="auxilio">
+              <i class="material-icons">
+                settings_applications
+                </i><span class="label-menu"> Auxilio</span>
+            </button>
+    
+            <mat-menu #auxilio="matMenu">
+              <button mat-menu-item [routerLink]="['/auxilio/cadastro']">
+                  <mat-icon>list_view</mat-icon>Auxilio
+              </button>
+            </mat-menu>
+
+            <button class="item-menu"  mat-button  [matMenuTriggerFor]="nutricionista">
+              <i class="material-icons">
+                assignment_turned_in
+                </i><span class="label-menu"> Nutricionista</span>
+            </button>
+    
+            <mat-menu #nutricionista="matMenu">
+              <button mat-menu-item [routerLink]="['/nutricionista/cadastro']">
+                  <mat-icon>list_view</mat-icon>Listar
+              </button>
+            </mat-menu>
+
+            <button class="item-menu"  mat-button  [matMenuTriggerFor]="chefe">
+              <i class="material-icons">
+                restaurant_menu
+                </i><span class="label-menu"> Chefe</span>
+            </button>
+    
+            <mat-menu #chefe="matMenu">
+              <button mat-menu-item [routerLink]="['/chefe/cadastro']">
+                  <mat-icon>list_view</mat-icon>Chefe
+              </button>
+            </mat-menu>
+
+            
+
+            <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="instituicaoEnsino">
                 <i class="material-icons md-48">school</i><span class="label-menu"> Instituicão Ensino</span>
                 </button>
       
@@ -113,7 +127,7 @@
 
           
 
-          <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="tipoRegistro">
+          <button class="item-menu"  mat-button  [matMenuTriggerFor]="tipoRegistro">
             <i class="material-icons md-48">note_add</i><span class="label-menu"> Tipo Material</span>
           </button>
   
@@ -122,7 +136,7 @@
 
           
 
-          <button class="item-menu"  mat-button  [matMenuTriggerFor]="usuario">
+          <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="usuario">
             <i class="material-icons md-48">person</i><span class="label-menu"> Usuário</span>
           </button>
   
@@ -134,7 +148,7 @@
           </button>
   
           <mat-menu #sugestao="matMenu">
-          </mat-menu>
+          </mat-menu>-->
         </mat-nav-list>
       </mat-sidenav>
   

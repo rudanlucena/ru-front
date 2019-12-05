@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  host: 'http://192.168.2.44:8080/'
+  host: 'http://localhost:9999/'
   //host: 'http://biblioteca-dev.sa-east-1.elasticbeanstalk.com/'
 };
 

@@ -1,0 +1,42 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>
+      Auxilio
+    </mat-card-title>
+    <hr />
+    <mat-card-content>
+      <div fxLayout="row wrap">
+        <div class="formPeriodo">
+        <div fxFlex="70">
+
+          <mat-form-field>
+            <input matInput placeholder="Periodo" [(ngModel)]="periodo.nome" name="periodo">
+          </mat-form-field>
+        </div>
+        <div fxFlex="70">
+
+          <mat-form-field class="dataPadrao">
+            <input matInput [matDatepicker]="picker" placeholder="Inicio" [(ngModel)]="periodo.inicio">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="70">
+          <mat-form-field class="dataPadrao">
+            <input matInput [matDatepicker]="picker2" placeholder="Fim" [(ngModel)]="periodo.fim">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+      </div>
+      </div>
+      <div class="example-button-row" align="right">
+        <button mat-raised-button (click)="salvarPeriodo()">Salvar</button>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</div>

@@ -14,17 +14,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { InicioModule } from './pages/inicio/inicio.module';
-import { ListaAssuntoModule } from './pages/assunto/lista-assunto/lista-assunto.module';
-import { CadastroAssuntoModule } from './pages/assunto/cadastro-assunto/cadastro-assunto.module';
-import { ListaAutorModule } from './pages/autor/lista-autor/lista-autor.module';
-import { CadastroAutorModule } from './pages/autor/cadastro-autor/cadastro-autor.module';
-import { ListaBibliotecaModule } from './pages/biblioteca/lista-biblioteca/lista-biblioteca.module';
-import { CadastroBibliotecaModule } from './pages/biblioteca/cadastro-biblioteca/cadastro-biblioteca.module';
-import { ListaTipoRegistroModule } from './pages/tipo-registro/lista-tipo-registro/lista-tipo-registro.module';
-import { CadastroTipoRegistroModule } from './pages/tipo-registro/cadastro-tipo-registro/cadastro-tipo-registro.module';
-import { ListaInstituicaoEnsinoModule } from './pages/instituicao-ensino/lista-instituicao-ensino/lista-instituicao-ensino.module';
-import { CadastroInstituicaoEnsinoModule } from './pages/instituicao-ensino/cadastro-instituicao-ensino/cadastro-instituicao-ensino.module';
-import { AssuntoModule } from './pages/assunto/assunto.module';
+import { ListaAlunoModule } from './pages/aluno/lista-aluno/lista-aluno.module';
+import { CadastroAlunoModule } from './pages/aluno/cadastro-aluno/cadastro-aluno.module';
 
 
 @NgModule({
@@ -32,25 +23,12 @@ import { AssuntoModule } from './pages/assunto/assunto.module';
     AppComponent
   ],
   imports: [
-    
-    
+
     MenuModule,
     InicioModule,
-    ListaAssuntoModule,
-    CadastroAssuntoModule,
-    
 
-    ListaAutorModule,
-    CadastroAutorModule,
-
-    ListaBibliotecaModule,
-    CadastroBibliotecaModule,
-
-    ListaTipoRegistroModule,
-    CadastroTipoRegistroModule,
-
-    ListaInstituicaoEnsinoModule,
-    CadastroInstituicaoEnsinoModule,
+    ListaAlunoModule,
+    CadastroAlunoModule,
 
     BrowserModule,
     AppRoutingModule,

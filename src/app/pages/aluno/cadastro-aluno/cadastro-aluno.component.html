@@ -1,0 +1,110 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <mat-progress-bar *ngIf="conectandoSuap" mode="indeterminate" value="40"></mat-progress-bar>
+  <mat-card>
+
+    <!--<mat-button-toggle-group [(ngModel)]="tipoImpressao" name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="suap">Via Suap</mat-button-toggle>
+      <mat-button-toggle value="manual">Manual</mat-button-toggle>
+    </mat-button-toggle-group>-->
+
+    <mat-card-title>
+      Cadastro de Aluno
+    </mat-card-title>
+    <hr />
+    <!--<mat-card-content *ngIf="tipoImpressao=='manual'">
+      <div fxLayout="row wrap">
+        <div fxFlex class="foto">
+          <h4>Escolha uma foto</h4>
+          <a md-raised-button color="primary" (click)="fileInput.click()">
+            <img *ngIf="!isFoto" src="../../../assets/logos/rounded-circle-account.svg">
+            <img *ngIf="isFoto" src="{{aluno.foto}}">
+          </a>
+          <input hidden type="file" #fileInput (change)="onFileChanged($event)">
+        </div>
+        <div fxFlex="70">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Nome" [(ngModel)]="aluno.nome" name="nome">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Matricula" [(ngModel)]="aluno.matricula" name="matricula">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" [(ngModel)]="aluno.email" name="email">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Telefone" [(ngModel)]="aluno.telefone" name="telefone">
+            </mat-form-field>
+
+            <div fxLayout="row wrap">
+              <div fxFlex>
+                <mat-form-field class="inputMenor">
+                  <input matInput placeholder="Data de Nascimento" mask="00/00/0000" [(ngModel)]="data" name="data">
+                </mat-form-field>
+              </div>
+              <div fxFlex>
+                <mat-form-field class="inputMenor">
+                  <mat-label>Sexo</mat-label>
+                  <mat-select [(ngModel)]="aluno.sexo" name="sexo">
+                    <mat-option *ngFor="let item of sexo" [value]="item.value">
+                      {{item.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div fxFlex>
+                <mat-form-field class="inputMenor">
+                  <input matInput placeholder="Inicio Auxilio" mask="00/00/0000" [(ngModel)]="inicio" name="inicio">
+                </mat-form-field>
+              </div>
+              <div fxFlex>
+                <mat-form-field class="inputMenor">
+                  <input matInput placeholder="Vencimento Auxilio" mask="00/00/0000" [(ngModel)]="vencimento"
+                    name="vencimento">
+                </mat-form-field>
+              </div>
+              <div fxFlex>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Curso</mat-label>
+                  <mat-select [(ngModel)]="aluno.curso" name="curso">
+                    <mat-option *ngFor="let item of curso" [value]="item.value">
+                      {{item.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="example-button-row" align="right">
+        <button mat-raised-button (click)="salvarAluno()">Salvar</button>
+      </div>
+    </mat-card-content>
+
+    <mat-progress-spinner
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value">
+    </mat-progress-spinner>-->
+
+    <mat-card-content>
+      <div fxLayout="row wrap">
+
+        <div class="example-button-row">
+          <button mat-fab color="primary" (click)="getAluno()">Sincronizar <i class="material-icons">
+              sync
+            </i></button>
+        </div>
+
+      </div>
+      <!--<div class="example-button-row" align="right">
+        <button mat-raised-button (click)="salvarAluno()">Salvar</button>
+      </div>-->
+    </mat-card-content>
+  </mat-card>
+</div>
