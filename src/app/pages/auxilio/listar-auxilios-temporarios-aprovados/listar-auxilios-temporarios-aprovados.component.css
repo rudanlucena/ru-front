@@ -7,7 +7,7 @@ mat-card {
 mat-card-title {
     color: #006837;
     font-weight: bold;
-    
+    padding-left: 50px;
 }
 
 mat-card-content{

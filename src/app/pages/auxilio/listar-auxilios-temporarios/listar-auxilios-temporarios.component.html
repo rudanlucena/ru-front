@@ -1,0 +1,81 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>
+      Auxilios Temporarios - Pendentes
+    </mat-card-title>
+    <hr />
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-spinner [ngStyle]="{'display': loader}" class="mat-spinner"></mat-spinner>
+      </div>
+
+      <div *ngIf="loader == 'none'">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Pesquisar">
+        </mat-form-field>
+        <mat-table [dataSource]="solicitacoes" class="mat-elevation-z8">
+          <!-- Name Column -->
+          <ng-container matColumnDef="aluno">
+            <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.aluno.nome}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="matricula">
+            <mat-header-cell *matHeaderCellDef> Matricula </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.aluno.matricula}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="almoco">
+            <mat-header-cell *matHeaderCellDef> Almoço/jantar </mat-header-cell>
+            <mat-cell *matCellDef="let autor">
+              <mat-checkbox *ngIf="autor.almoco==true" [checked]="autor.almoco"></mat-checkbox>
+              <mat-checkbox *ngIf="!autor.almoco==true" [checked]="autor.almoco"></mat-checkbox>
+              
+              <mat-checkbox *ngIf="!autor.jantar==true" [checked]="autor.jantar"></mat-checkbox>
+              <mat-checkbox *ngIf="autor.jantar==true" [checked]="autor.jantar"></mat-checkbox>
+           
+            </mat-cell>
+          </ng-container>
+
+
+          <ng-container matColumnDef="inicio">
+            <mat-header-cell *matHeaderCellDef> Inicio </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.inicio}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="termino">
+            <mat-header-cell *matHeaderCellDef> Fim </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.fim}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="motivo">
+            <mat-header-cell *matHeaderCellDef> motivo </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.motivo}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="aprovar">
+            <mat-header-cell *matHeaderCellDef> aprovar </mat-header-cell>
+            <mat-cell *matCellDef="let autor"><i  (click)="aprovarAuxilio(autor)" class="material-icons acoes icon-aprovar">
+                check_circle_outline
+              </i>
+              <i class="material-icons acoes icon-rejeitar">
+                highlight_off
+              </i> </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="salvar">
+            <mat-header-cell *matHeaderCellDef> Salvar </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> <button (click)="addAuxilio(autor.matricula)" mat-button
+                color="primary"><i class="material-icons">
+                  save
+                </i></button> </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+      </div>
+      <mat-paginator [pageSize]="20"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>

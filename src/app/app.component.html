@@ -53,22 +53,50 @@
     
             <mat-menu #nutricionista="matMenu">
               <button mat-menu-item [routerLink]="['/nutricionista/cadastro']">
-                  <mat-icon>list_view</mat-icon>Listar
+                  <mat-icon>add</mat-icon>Cadastro 
               </button>
+
+              <button mat-menu-item [routerLink]="['/nutricionista/lista']">
+                <mat-icon>list_view</mat-icon>Listar 
+            </button>
             </mat-menu>
 
-            <button class="item-menu"  mat-button  [matMenuTriggerFor]="chefe">
+
+
+            <button class="item-menu"  mat-button  [matMenuTriggerFor]="assistente">
               <i class="material-icons">
-                restaurant_menu
-                </i><span class="label-menu"> Chefe</span>
+                assignment_turned_in
+                </i><span class="label-menu"> Assistente</span>
             </button>
     
-            <mat-menu #chefe="matMenu">
-              <button mat-menu-item [routerLink]="['/chefe/cadastro']">
-                  <mat-icon>list_view</mat-icon>Chefe
+            <mat-menu #assistente="matMenu">
+              <button mat-menu-item [routerLink]="['/assistente-social/cadastro']">
+                  <mat-icon>add</mat-icon>Cadastro 
               </button>
+
+              <button mat-menu-item [routerLink]="['/assistente-social/lista']">
+                <mat-icon>list_view</mat-icon>Listar 
+            </button>
             </mat-menu>
 
+            
+
+            <button class="item-menu"  mat-button  [matMenuTriggerFor]="solicitacoes">
+                <i class="material-icons">
+                    notifications_active
+                  </i><span class="label-menu"> Solicitações</span>
+              </button>
+      
+              <mat-menu #solicitacoes="matMenu">
+                <button mat-menu-item [routerLink]="['/auxilio/lista-auxilios-temporarios']">
+                    <mat-icon>list_view</mat-icon>Listar Solicitações Pendentes
+                </button>
+                <button mat-menu-item [routerLink]="['/auxilio/lista-auxilios-temporarios-aprovados']">
+                  <mat-icon>list_view</mat-icon>Listar Solicitações Aprovadas
+              </button>
+              </mat-menu>
+
+              
             
 
             <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="instituicaoEnsino">

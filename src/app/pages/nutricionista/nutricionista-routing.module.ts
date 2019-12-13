@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: 'nutricionista', children: [
     {path: '', redirectTo: 'lista', pathMatch: 'full'},
-    { path: 'cadastro', loadChildren: './cadastro-nutricionista/cadastro-nutricionista.module#CadastroNutricionistaModule'}
-    //{ path: 'lista', loadChildren: './lista-nutricionista/lista-nutricionista.module#ListaNutricionistaModule'}
+    { path: 'editar/:id', loadChildren: './editar-nutricionista/editar-nutricionista.module#EditarNutricionistaModule'},
+    { path: 'cadastro', loadChildren: './cadastro-nutricionista/cadastro-nutricionista.module#CadastroNutricionistaModule'},
+    { path: 'lista', loadChildren: './lista-nutricionista/lista-nutricionista.module#ListaNutricionistaModule'}
   ]}
 ];
 

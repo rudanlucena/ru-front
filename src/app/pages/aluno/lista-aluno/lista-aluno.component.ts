@@ -22,11 +22,12 @@ export class ListaAlunoComponent implements OnInit {
   constructor(private alunoService: AlunoService, private router: Router) { }
 
   ngOnInit() {
-    this.displayLoader();
+    
     this.lista();
   }
 
   lista(){
+    this.displayLoader();
     this.alunoService.listar().subscribe(
       res => {
         this.autores = new MatTableDataSource<Aluno>(res.body);
@@ -42,6 +43,7 @@ export class ListaAlunoComponent implements OnInit {
           heightAuto: true,
           confirmButtonColor: '#C1272D'
         })
+        this.displayLoader();
       }
     );
   }

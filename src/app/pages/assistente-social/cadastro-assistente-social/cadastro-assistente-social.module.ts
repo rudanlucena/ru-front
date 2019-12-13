@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CadastroNutricionistaRoutingModule } from './cadastro-nutricionista-routing.module';
-import { CadastroNutricionistaComponent } from './cadastro-nutricionista.component';
+import { CadastroAssistenteSocialRoutingModule } from './cadastro-assistente-social-routing.module';
+import { CadastroAssistenteSocialComponent } from './cadastro-assistente-social.component';
 import { MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CadastroNutricionistaComponent],
+  declarations: [CadastroAssistenteSocialComponent],
   imports: [
     CommonModule,
-    CadastroNutricionistaRoutingModule,
+    CadastroAssistenteSocialRoutingModule,
     MatInputModule,
     MatCardModule,
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule
+
   ]
 })
-export class CadastroNutricionistaModule { }
+export class CadastroAssistenteSocialModule { }

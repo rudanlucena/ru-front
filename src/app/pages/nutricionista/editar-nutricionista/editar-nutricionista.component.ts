@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { Nutricionista } from 'src/app/models/Nutricionista';
 import { NutricionistaService } from 'src/app/services/nutricionista.service';
-import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cadastro-nutricionista',
-  templateUrl: './cadastro-nutricionista.component.html',
-  styleUrls: ['./cadastro-nutricionista.component.css']
+  selector: 'app-editar-nutricionista',
+  templateUrl: './editar-nutricionista.component.html',
+  styleUrls: ['./editar-nutricionista.component.css']
 })
-export class CadastroNutricionistaComponent implements OnInit {
-  nutricionista:Nutricionista
+export class EditarNutricionistaComponent implements OnInit {
+  nutricionista: Nutricionista
 
-  constructor(private nutricionistaService:NutricionistaService, private router:Router) {
+  constructor(private nutricionistaService: NutricionistaService, private router: Router) {
     this.nutricionista = new Nutricionista();
-   }
+    this.nutricionista = JSON.parse(localStorage.getItem("nutricionistaEdit"))
+  }
 
   ngOnInit() {
+    
   }
 
   async salvarNutricionista() {
@@ -51,5 +53,4 @@ export class CadastroNutricionistaComponent implements OnInit {
     }
 
   }
-
 }

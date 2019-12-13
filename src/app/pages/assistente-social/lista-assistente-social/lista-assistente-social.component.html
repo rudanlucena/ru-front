@@ -1,0 +1,56 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>
+      Assistentes Sociais
+    </mat-card-title>
+    <hr />
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-spinner [ngStyle]="{'display': loader}" class="mat-spinner"></mat-spinner>
+      </div>
+
+      <div *ngIf="loader == 'none'">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Pesquisar">
+        </mat-form-field>
+        <mat-table [dataSource]="assistentes" class="mat-elevation-z8">
+          <!-- Name Column -->
+          <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.nome}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="matricula">
+            <mat-header-cell *matHeaderCellDef> Matricula </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.matricula}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.email}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="telefone">
+            <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.telefone}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="acoes">
+            <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
+            <mat-cell *matCellDef="let autor"> 
+                <i (click)="editarAssistente(autor)" class="material-icons acoes icon-aprovar">
+                    edit
+                  </i>
+            <i (click)="removerAssistente(autor.id)" class="material-icons acoes icon-rejeitar">
+              highlight_off
+            </i> </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+      </div>
+      <mat-paginator [pageSize]="20"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>

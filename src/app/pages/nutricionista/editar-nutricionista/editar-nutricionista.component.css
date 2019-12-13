@@ -2,12 +2,13 @@ mat-card {
     background-color: #E6E6E6;
     width: 96%;
     margin-top: 1%;
+    margin-left: 8px;
 }
 
 mat-card-title {
     color: #006837;
     font-weight: bold;
-    
+    padding-left: 50px;
 }
 
 mat-card-content{
@@ -87,4 +88,20 @@ mat-form-field {
 
 .dataPadrao{
     width: 150px;
+}
+
+mat-checkbox{
+    margin-left: 15px;
+}
+
+.acoes{
+    margin-left: 15px;
+}
+
+.icon-aprovar{
+    color: green;
+}
+
+.icon-rejeitar{
+    color: red;
 }

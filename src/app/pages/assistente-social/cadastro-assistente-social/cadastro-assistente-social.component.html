@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <mat-card>
     <mat-card-title>
-      Nutricionista
+      Assistente Social
     </mat-card-title>
     <hr />
     <mat-card-content>
@@ -9,25 +9,25 @@
         <div class="formPeriodo">
           <div fxFlex="70">
             <mat-form-field>
-              <input matInput placeholder="Nome" [(ngModel)]="nutricionista.nome" name="nome">
+              <input matInput placeholder="Nome" [(ngModel)]="assistente.nome" name="nome">
             </mat-form-field>
           </div>
 
           <div fxFlex="70">
             <mat-form-field>
-              <input matInput placeholder="Matricula" [(ngModel)]="nutricionista.matricula" name="matricula">
+              <input matInput placeholder="Matricula" [(ngModel)]="assistente.matricula" name="matricula">
             </mat-form-field>
           </div>
 
           <div fxFlex="70">
             <mat-form-field>
-              <input matInput placeholder="Email" [(ngModel)]="nutricionista.email" name="email">
+              <input matInput placeholder="Email" [(ngModel)]="assistente.email" name="email">
             </mat-form-field>
           </div>
 
           <div fxFlex="70">
             <mat-form-field>
-              <input matInput placeholder="Telefone" [(ngModel)]="nutricionista.telefone" name="telefone">
+              <input matInput placeholder="Telefone" [(ngModel)]="assistente.telefone" name="telefone">
             </mat-form-field>
           </div>
 
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="example-button-row" align="right">
-        <button mat-raised-button (click)="salvarNutricionista()">Salvar</button>
+        <button mat-raised-button (click)="salvarAssistente()">Salvar</button>
       </div>
     </mat-card-content>
 

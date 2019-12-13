@@ -5,6 +5,8 @@ import { AuxilioRoutingModule } from './auxilio-routing.module';
 import { CadastroAuxilioModule } from './cadastro-auxilio/cadastro-auxilio.module';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { ListarAuxiliosTemporariosModule } from './listar-auxilios-temporarios/listar-auxilios-temporarios.module';
+import { ListarAuxiliosTemporariosAprovadosModule } from './listar-auxilios-temporarios-aprovados/listar-auxilios-temporarios-aprovados.module';
 
 @NgModule({
   declarations: [],
@@ -12,6 +14,8 @@ import { MatCardModule, MatDatepickerModule, MatNativeDateModule } from '@angula
     CommonModule,
     AuxilioRoutingModule,
     CadastroAuxilioModule,
+    ListarAuxiliosTemporariosModule,
+    ListarAuxiliosTemporariosAprovadosModule
     
   ]
 })
