@@ -15,6 +15,10 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
+      <p><b>Periodo: </b>{{periodo.nome}}</p>
+      <p><b>Inicio: </b>{{periodo.inicio}}</p>
+      <p><b>Vencimento: </b>{{periodo.fim}}</p>
+
       <div *ngIf="loader == 'none'">
         <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Pesquisar">
@@ -23,7 +27,7 @@
           <!-- Name Column -->
           <ng-container matColumnDef="nome">
             <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-            <mat-cell *matCellDef="let autor" > {{autor.nome}} </mat-cell>
+            <mat-cell *matCellDef="let autor"> {{autor.nome}} </mat-cell>
           </ng-container>
 
           <ng-container matColumnDef="matricula">
@@ -32,25 +36,48 @@
           </ng-container>
 
           <ng-container matColumnDef="almoco">
-            <mat-header-cell *matHeaderCellDef> Almoço </mat-header-cell>
+
+            <mat-header-cell *matHeaderCellDef> Almoço/Jantar </mat-header-cell>
             <mat-cell *matCellDef="let autor">
-              <mat-checkbox></mat-checkbox>
+              <mat-slide-toggle *ngIf="autor.auxilio" (change)="addAlmoco($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="autor.auxilio.almoco" 
+               > </mat-slide-toggle>
+
+               <mat-slide-toggle *ngIf="!autor.auxilio" (change)="addAlmoco($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="false" 
+               > </mat-slide-toggle>
+
+               <mat-slide-toggle *ngIf="autor.auxilio" (change)="addJantar($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="autor.auxilio.jantar" 
+               > </mat-slide-toggle>
+
+               <mat-slide-toggle *ngIf="!autor.auxilio" (change)="addJantar($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="false" 
+               > </mat-slide-toggle>
+
+                <!--<mat-checkbox (change)="valueChange($event, autor)" *ngIf="autor.auxilio"
+                  [checked]="autor.auxilio.almoco" id="{{autor.uuid}}_almoco"></mat-checkbox>
+                <mat-checkbox (change)="valueChange($event)" *ngIf="autor.auxilio" [checked]="autor.auxilio.jantar"
+                  id="{{autor.uuid}}_jantar"></mat-checkbox>
+
+                <mat-checkbox (change)="valueChange($event)" *ngIf="!autor.auxilio" id="{{autor.uuid}}_almoco">
+                </mat-checkbox>
+                <mat-checkbox (change)="valueChange($event)" *ngIf="!autor.auxilio" id="{{autor.uuid}}_jantar">
+                </mat-checkbox>-->
             </mat-cell>
           </ng-container>
 
-          <ng-container matColumnDef="jantar">
-            <mat-header-cell *matHeaderCellDef> Jantar </mat-header-cell>
-            <mat-cell *matCellDef="let autor">
-              <mat-checkbox></mat-checkbox>
-            </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="salvar">
+          <!--<ng-container matColumnDef="salvar">
             <mat-header-cell *matHeaderCellDef> Salvar </mat-header-cell>
-            <mat-cell *matCellDef="let autor"> <button (click)="addAuxilio(autor.matricula)" mat-button color="primary"><i class="material-icons">
+            <mat-cell *matCellDef="let autor"> <button (click)="addAuxilio(autor)" mat-button color="primary"><i
+                  class="material-icons">
                   save
                 </i></button> </mat-cell>
-          </ng-container>
+          </ng-container>-->
 
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>

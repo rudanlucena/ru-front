@@ -26,18 +26,19 @@
             </ng-container>
   
             <ng-container matColumnDef="almoco">
-              <mat-header-cell *matHeaderCellDef> Almoço </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef> Almoço/jantar </mat-header-cell>
               <mat-cell *matCellDef="let autor">
-                <mat-checkbox *ngIf="autor.almoco==true" [checked]="autor.almoco"></mat-checkbox>
-                <mat-checkbox *ngIf="!autor.almoco==true" [checked]="autor.almoco"></mat-checkbox>
-              </mat-cell>
-            </ng-container>
   
-            <ng-container matColumnDef="jantar">
-              <mat-header-cell *matHeaderCellDef> Jantar </mat-header-cell>
-              <mat-cell *matCellDef="let autor">
-                <mat-checkbox *ngIf="!autor.jantar==true" [checked]="autor.jantar"></mat-checkbox>
-                <mat-checkbox *ngIf="autor.jantar==true" [checked]="autor.jantar"></mat-checkbox>
+                <mat-slide-toggle (change)="editarAlmoco($event, autor)"
+                 class="example-margin" [color]="red"
+                  [checked]="autor.almoco" 
+                 > </mat-slide-toggle>
+  
+                 <mat-slide-toggle (change)="editarJantar($event, autor)"
+                 class="example-margin" [color]="red"
+                  [checked]="autor.jantar" 
+                 > </mat-slide-toggle>  
+                            
               </mat-cell>
             </ng-container>
   

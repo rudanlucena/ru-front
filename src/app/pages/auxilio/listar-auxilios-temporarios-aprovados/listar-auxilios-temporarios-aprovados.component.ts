@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ListarAuxiliosTemporariosAprovadosComponent implements OnInit {
   solicitacoes: MatTableDataSource<AuxilioTemporario>;
-  displayedColumns: string[] = ['aluno', 'matricula', 'almoco', 'jantar', 'inicio', 'termino', 'motivo'];
+  displayedColumns: string[] = ['aluno', 'matricula', 'almoco', 'inicio', 'termino', 'motivo'];
   loader = 'none';
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -54,5 +54,23 @@ export class ListarAuxiliosTemporariosAprovadosComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.solicitacoes.filter = filterValue.trim().toLowerCase();
+  }
+
+  editarAlmoco($event, auxilio:AuxilioTemporario){
+    try {
+      auxilio.almoco = $event.checked;
+      this.auxilioTemporarioService.editar(auxilio);
+    } catch (error) {
+      console.log("Não foi possivel solicitar o auxilio");
+    }
+  }
+
+  editarJantar($event, auxilio:AuxilioTemporario){
+    try {
+      auxilio.jantar = $event.checked;
+      this.auxilioTemporarioService.editar(auxilio);
+    } catch (error) {
+      console.log("Não foi possivel solicitar o auxilio");
+    }
   }
 }

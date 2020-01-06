@@ -6,6 +6,9 @@ import swal from 'sweetalert2';
 import Swal from 'sweetalert2';
 import { Auxilio } from 'src/app/models/auxilio';
 import { Router } from '@angular/router';
+import { PeriodoService } from 'src/app/services/periodo.service ';
+import { Periodo } from 'src/app/models/periodo';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-lista-aluno',
@@ -15,21 +18,26 @@ import { Router } from '@angular/router';
 export class ListaAlunoComponent implements OnInit {
 
   autores: MatTableDataSource<Aluno>;
-  displayedColumns: string[] = ['nome', 'matricula', 'almoco', 'jantar', 'salvar'];
+  displayedColumns: string[] = ['nome', 'matricula', 'almoco'];
   loader = 'none';
-  
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  constructor(private alunoService: AlunoService, private router: Router) { }
+  periodo: Periodo = new Periodo();
+  teste
+
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  constructor(private alunoService: AlunoService, private periodoService: PeriodoService, private router: Router) { }
 
   ngOnInit() {
-    
+
     this.lista();
+    this.listaPeriodo();
   }
 
-  lista(){
+  lista() {
     this.displayLoader();
     this.alunoService.listar().subscribe(
       res => {
+        console.log("============================")
+        console.log(res.body)
         this.autores = new MatTableDataSource<Aluno>(res.body);
         this.displayLoader();
         this.autores.paginator = this.paginator;
@@ -46,6 +54,26 @@ export class ListaAlunoComponent implements OnInit {
         this.displayLoader();
       }
     );
+
+
+  }
+
+  listaPeriodo() {
+    this.periodoService.listar().subscribe(
+      res => {
+        this.periodo = res.body;
+
+      },
+      error => {
+        swal.fire({
+          html: `<h3>Não foi possível carregar o periodo</h3>`,
+          type: 'error',
+          width: 400,
+          heightAuto: true,
+          confirmButtonColor: '#C1272D'
+        })
+      }
+    );
   }
 
   public async getAluno(id: number) {
@@ -53,7 +81,7 @@ export class ListaAlunoComponent implements OnInit {
       let r = await this.alunoService.getAll()
       console.log("*Aluno Encontrado:");
 
-      
+
     } catch (e) {
       console.log("*Aluno Não Encontrado:");
     }
@@ -63,26 +91,27 @@ export class ListaAlunoComponent implements OnInit {
     this.autores.filter = filterValue.trim().toLowerCase();
   }
 
-   //verificando o loader
-   displayLoader() {
+  //verificando o loader
+  displayLoader() {
     if (this.loader == 'block')
       this.loader = 'none';
     else
       this.loader = 'block';
   }
 
-  async addAuxilio(matricula:String) {
+  async addAuxilio(aluno: Aluno) {
 
-    alert("Matricula"+ matricula)
+    alert("Matricula" + aluno.matricula)
     //console.log(this.alunos)
     //this.formatData();
     //
     try {
-      let aux:Auxilio = new Auxilio;
+
+      let aux: Auxilio = new Auxilio;
       aux.almoco = true;
       aux.jantar = true;
 
-      await this.alunoService.addAuxilio(aux, matricula).subscribe(
+      await this.alunoService.addAuxilio(aux, aluno.matricula).subscribe(
         res => {
           Swal.fire({
             html: `<h3>Salvo com sucesso!</h3>`,
@@ -110,5 +139,101 @@ export class ListaAlunoComponent implements OnInit {
       })
     }
 
+  }
+
+  valueChange($event, aluno: Aluno) {
+
+    //set the two-way binding here for the specific unit with the event
+    console.log("===========================")
+    console.log($event.checked);
+  }
+
+  async addAlmoco($event, aluno: Aluno) {
+    console.log($event)
+    console.log(aluno)
+    try {
+      let aux: Auxilio
+      if (aluno.auxilio == null) {
+        aux = new Auxilio();
+        aux.almoco = $event.checked;
+        aluno.auxilio = aux
+
+        
+      }
+
+      else {
+        aluno.auxilio.almoco = $event.checked;
+        aux = aluno.auxilio;
+      }
+
+      await this.alunoService.addAuxilio(aux, aluno.matricula).subscribe(
+        res => {
+          /*Swal.fire({
+            html: `<h3>Salvo com sucesso!</h3>`,
+            type: 'success',
+            width: 400,
+            heightAuto: true,
+            confirmButtonColor: '#39B54A'
+          }).then((result) => {
+            this.router.navigate(['/aluno/lista']);
+          })*/
+        }
+
+      );
+
+    } catch (error) {
+      console.log(error)
+      console.log("asdasdas")
+      Swal.fire({
+        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
+        type: 'error',
+        width: 400,
+        heightAuto: true,
+        confirmButtonColor: '#C1272D'
+      })
+    }
+  }
+
+  async addJantar($event, aluno: Aluno) {
+    console.log($event)
+    console.log(aluno)
+    try {
+      let aux: Auxilio
+      if (aluno.auxilio == null) {
+        aux = new Auxilio();
+        aux.jantar = $event.checked;
+      }
+
+      else {
+        aluno.auxilio.jantar = $event.checked;
+        aux = aluno.auxilio;
+      }
+
+      await this.alunoService.addAuxilio(aux, aluno.matricula).subscribe(
+        res => {
+          /*Swal.fire({
+            html: `<h3>Salvo com sucesso!</h3>`,
+            type: 'success',
+            width: 400,
+            heightAuto: true,
+            confirmButtonColor: '#39B54A'
+          }).then((result) => {
+            this.router.navigate(['/aluno/lista']);
+          })*/
+        }
+
+      );
+
+    } catch (error) {
+      console.log(error)
+      console.log("asdasdas")
+      Swal.fire({
+        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
+        type: 'error',
+        width: 400,
+        heightAuto: true,
+        confirmButtonColor: '#C1272D'
+      })
+    }
   }
 }

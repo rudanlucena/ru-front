@@ -14,7 +14,9 @@ export class CadastroAuxilioComponent implements OnInit {
   periodo:Periodo = new Periodo()
   
 
-  constructor(private periodoService:PeriodoService, private router: Router) { }
+  constructor(private periodoService:PeriodoService, private router: Router) {
+    this,this.lista();
+   }
 
   ngOnInit() {
   }
@@ -52,6 +54,24 @@ export class CadastroAuxilioComponent implements OnInit {
       })
     }
 
+  }
+
+  lista(){
+    this.periodoService.listar().subscribe(
+      res => {
+        this.periodo = res.body;
+        
+      },
+      error => {
+        Swal.fire({
+          html: `<h3>Não foi possível carregar a lista!</h3>`,
+          type: 'error',
+          width: 400,
+          heightAuto: true,
+          confirmButtonColor: '#C1272D'
+        })
+      }
+    );
   }
 
 }

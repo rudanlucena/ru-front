@@ -48,6 +48,11 @@ export class AuxilioTemporarioService {
     return await this.http.post<AuxilioTemporario>(url, auxilio).toPromise();
   }
 
+  public async editar(auxilio:AuxilioTemporario):Promise<AuxilioTemporario> {
+    const url = `${this.url}`;
+    return await this.http.post<AuxilioTemporario>(url, auxilio).toPromise();
+}
+
   /*public async getAll():Promise<Aluno[]>{  
     return await this.http.get<Aluno[]>(this.urlAlunosSUAP).toPromise();
   }

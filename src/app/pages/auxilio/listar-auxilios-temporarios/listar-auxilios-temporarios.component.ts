@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 import { Router } from '@angular/router';
 import { AuxilioTemporarioService } from 'src/app/services/AuxilioTemporario.service';
+import { Auxilio } from 'src/app/models/auxilio';
 
 @Component({
   selector: 'app-listar-auxilios-temporarios',
@@ -87,5 +88,25 @@ export class ListarAuxiliosTemporariosComponent implements OnInit {
       }
     )*/
   }
+
+  editarAlmoco($event, auxilio:AuxilioTemporario){
+    try {
+      auxilio.almoco = $event.checked;
+      this.auxilioTemporarioService.editar(auxilio);
+    } catch (error) {
+      console.log("Não foi possivel solicitar o auxilio");
+    }
+  }
+
+  editarJantar($event, auxilio:AuxilioTemporario){
+    try {
+      auxilio.jantar = $event.checked;
+      this.auxilioTemporarioService.editar(auxilio);
+    } catch (error) {
+      console.log("Não foi possivel solicitar o auxilio");
+    }
+  }
+
+  
 
 }

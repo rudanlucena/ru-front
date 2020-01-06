@@ -29,8 +29,8 @@ export class PeriodoService {
     return this.http.post<Periodo[]>(this.url, periodo, { observe: 'response' });
   }
 
-  /*listar(): Observable<HttpResponse<Aluno[]>> {
-    return this.http.get<Aluno[]>(this.url, { headers: httpOptions, observe: 'response' });
-  }*/
+  listar(): Observable<HttpResponse<Periodo>> {
+    return this.http.get<Periodo>(this.url, { headers: httpOptions, observe: 'response' });
+  }
 
 }

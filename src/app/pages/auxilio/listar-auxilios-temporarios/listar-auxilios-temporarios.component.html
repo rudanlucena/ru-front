@@ -28,11 +28,22 @@
           <ng-container matColumnDef="almoco">
             <mat-header-cell *matHeaderCellDef> Almoço/jantar </mat-header-cell>
             <mat-cell *matCellDef="let autor">
-              <mat-checkbox *ngIf="autor.almoco==true" [checked]="autor.almoco"></mat-checkbox>
+
+              <mat-slide-toggle (change)="editarAlmoco($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="autor.almoco" 
+               > </mat-slide-toggle>
+
+               <mat-slide-toggle (change)="editarJantar($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="autor.jantar" 
+               > </mat-slide-toggle>
+
+             <!--<mat-checkbox *ngIf="autor.almoco==true"  [checked]="autor.almoco"></mat-checkbox>
               <mat-checkbox *ngIf="!autor.almoco==true" [checked]="autor.almoco"></mat-checkbox>
               
               <mat-checkbox *ngIf="!autor.jantar==true" [checked]="autor.jantar"></mat-checkbox>
-              <mat-checkbox *ngIf="autor.jantar==true" [checked]="autor.jantar"></mat-checkbox>
+              <mat-checkbox *ngIf="autor.jantar==true" [checked]="autor.jantar"></mat-checkbox>--> 
            
             </mat-cell>
           </ng-container>
@@ -58,7 +69,7 @@
             <mat-cell *matCellDef="let autor"><i  (click)="aprovarAuxilio(autor)" class="material-icons acoes icon-aprovar">
                 check_circle_outline
               </i>
-              <i class="material-icons acoes icon-rejeitar">
+              <i (click)="alertaRemover(autor)" class="material-icons acoes icon-rejeitar">
                 highlight_off
               </i> </mat-cell>
           </ng-container>

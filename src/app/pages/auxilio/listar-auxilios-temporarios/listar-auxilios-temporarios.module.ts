@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ListarAuxiliosTemporariosRoutingModule } from './listar-auxilios-temporarios-routing.module';
 import { ListarAuxiliosTemporariosComponent } from './listar-auxilios-temporarios.component';
-import { MatCardModule, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatCardModule, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatSlideToggleModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -20,7 +20,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatProgressSpinnerModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSlideToggleModule
+
   ]
 })
 export class ListarAuxiliosTemporariosModule { }

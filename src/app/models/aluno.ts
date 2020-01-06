@@ -1,4 +1,5 @@
 import { Curso } from './curso';
+import { Auxilio } from './auxilio';
 
 export class Aluno {
     public uuid:string;
@@ -7,4 +8,6 @@ export class Aluno {
 	public situacao:string
 	public cota:string
 	public curso:Curso
+
+	public auxilio:Auxilio
 }
