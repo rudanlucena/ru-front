@@ -1,0 +1,24 @@
+zxing-scanner{
+    width: 100px;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.example-card {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .checkin-success{
+      color: green;
+  }
+  .checkin-fail{
+    color: red;
+}

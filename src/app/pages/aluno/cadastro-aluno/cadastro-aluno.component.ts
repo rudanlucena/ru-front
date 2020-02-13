@@ -177,4 +177,5 @@ export class CadastroAlunoComponent implements OnInit {
         this.conectandoSuap = false
       });
   }
+
 }

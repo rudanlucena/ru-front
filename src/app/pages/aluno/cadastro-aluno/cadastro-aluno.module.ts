@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+
 import { MatButtonToggleModule, MatProgressSpinnerModule, MatProgressBarModule } from '@angular/material';
 
 @NgModule({
@@ -31,7 +32,7 @@ import { MatButtonToggleModule, MatProgressSpinnerModule, MatProgressBarModule }
     FormsModule,
     MatButtonToggleModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
   ],
   exports:[
     CadastroAlunoComponent

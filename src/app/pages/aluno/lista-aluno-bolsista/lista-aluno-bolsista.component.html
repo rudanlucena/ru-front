@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <mat-card>
     <mat-card-title>
-      Lista de Alunos
+      Alunos Bolsistas
     </mat-card-title>
     <hr />
     <mat-card-content>
@@ -33,19 +33,27 @@
 
             <mat-header-cell *matHeaderCellDef> Almoço/Jantar </mat-header-cell>
             <mat-cell *matCellDef="let autor">
-              <mat-slide-toggle *ngIf="autor.auxilio" (change)="addAlmoco($event, autor)" class="example-margin"
-                [color]="red" [checked]="autor.auxilio.almoco"> </mat-slide-toggle>
+              <mat-slide-toggle *ngIf="autor.auxilio" (change)="addAlmoco($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="autor.auxilio.almoco" 
+               > </mat-slide-toggle>
 
-              <mat-slide-toggle *ngIf="!autor.auxilio" (change)="addAlmoco($event, autor)" class="example-margin"
-                [color]="red" [checked]="false"> </mat-slide-toggle>
+               <mat-slide-toggle *ngIf="!autor.auxilio" (change)="addAlmoco($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="false" 
+               > </mat-slide-toggle>
 
-              <mat-slide-toggle *ngIf="autor.auxilio" (change)="addJantar($event, autor)" class="example-margin"
-                [color]="red" [checked]="autor.auxilio.jantar"> </mat-slide-toggle>
+               <mat-slide-toggle *ngIf="autor.auxilio" (change)="addJantar($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="autor.auxilio.jantar" 
+               > </mat-slide-toggle>
 
-              <mat-slide-toggle *ngIf="!autor.auxilio" (change)="addJantar($event, autor)" class="example-margin"
-                [color]="red" [checked]="false"> </mat-slide-toggle>
+               <mat-slide-toggle *ngIf="!autor.auxilio" (change)="addJantar($event, autor)"
+               class="example-margin" [color]="red"
+                [checked]="false" 
+               > </mat-slide-toggle>
 
-              <!--<mat-checkbox (change)="valueChange($event, autor)" *ngIf="autor.auxilio"
+                <!--<mat-checkbox (change)="valueChange($event, autor)" *ngIf="autor.auxilio"
                   [checked]="autor.auxilio.almoco" id="{{autor.uuid}}_almoco"></mat-checkbox>
                 <mat-checkbox (change)="valueChange($event)" *ngIf="autor.auxilio" [checked]="autor.auxilio.jantar"
                   id="{{autor.uuid}}_jantar"></mat-checkbox>
@@ -55,13 +63,6 @@
                 <mat-checkbox (change)="valueChange($event)" *ngIf="!autor.auxilio" id="{{autor.uuid}}_jantar">
                 </mat-checkbox>-->
             </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="editar">
-            <mat-header-cell *matHeaderCellDef> Editar </mat-header-cell>
-            <mat-cell *matCellDef="let autor"> <i class="material-icons" (click)="editar(autor)">
-                camera_alt
-              </i> </mat-cell>
           </ng-container>
 
           <!--<ng-container matColumnDef="salvar">

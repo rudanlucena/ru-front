@@ -1,0 +1,30 @@
+<div style="text-align:center"><p>{{aluno.nome}} - {{aluno.matricula}}</p></div>
+
+<div style="text-align:center" *ngIf="!mostrarFoto">
+  <div>
+   
+    <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+    <br />
+    <button mat-stroked-button id="snapshotBtn" (click)="triggerSnapshot();">
+      <i class="material-icons">
+        camera_alt
+      </i>
+    </button>
+  </div>
+</div>
+<div style="text-align:center" class="snapshot" *ngIf="mostrarFoto">
+ 
+  <img *ngIf="aluno.image==null" [src]="webcamImage.imageAsDataUrl" />
+  <img *ngIf="aluno.image!=null" [src]="aluno.image" />
+  <br />
+  <button mat-stroked-button (click)="novaImagem();">
+    <i class="material-icons">
+      highlight_off
+    </i>
+  </button>
+  <button mat-stroked-button (click)="salvarAluno();">
+    <i class="material-icons">
+      save
+    </i>
+  </button>
+</div>

@@ -1,24 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlunoService } from 'src/app/services/aluno.service';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { Aluno } from 'src/app/models/aluno';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
-import swal from 'sweetalert2';
+import { Periodo } from 'src/app/models/periodo';
+import { AlunoService } from 'src/app/services/aluno.service';
+import { PeriodoService } from 'src/app/services/periodo.service ';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Auxilio } from 'src/app/models/auxilio';
-import { Router } from '@angular/router';
-import { PeriodoService } from 'src/app/services/periodo.service ';
-import { Periodo } from 'src/app/models/periodo';
-import { async } from '@angular/core/testing';
+import { Subject, Observable } from 'rxjs';
+import { WebcamImage } from 'ngx-webcam';
 
 @Component({
-  selector: 'app-lista-aluno',
-  templateUrl: './lista-aluno.component.html',
-  styleUrls: ['./lista-aluno.component.css']
+  selector: 'app-lista-aluno-bolsista',
+  templateUrl: './lista-aluno-bolsista.component.html',
+  styleUrls: ['./lista-aluno-bolsista.component.css']
 })
-export class ListaAlunoComponent implements OnInit {
+export class ListaAlunoBolsistaComponent implements OnInit {
 
   autores: MatTableDataSource<Aluno>;
-  displayedColumns: string[] = ['nome', 'matricula', 'almoco', 'editar'];
+  displayedColumns: string[] = ['nome', 'matricula', 'almoco'];
   loader = 'none';
   periodo: Periodo = new Periodo();
   teste
@@ -34,7 +34,7 @@ export class ListaAlunoComponent implements OnInit {
 
   lista() {
     this.displayLoader();
-    this.alunoService.listar().subscribe(
+    this.alunoService.listarBolsistas().subscribe(
       res => {
         console.log("============================")
         console.log(res.body)
@@ -44,7 +44,7 @@ export class ListaAlunoComponent implements OnInit {
         console.log(this.autores);
       },
       error => {
-        swal.fire({
+        Swal.fire({
           html: `<h3>Não foi possível carregar a lista!</h3>`,
           type: 'error',
           width: 400,
@@ -65,7 +65,7 @@ export class ListaAlunoComponent implements OnInit {
 
       },
       error => {
-        swal.fire({
+        Swal.fire({
           html: `<h3>Não foi possível carregar o periodo</h3>`,
           type: 'error',
           width: 400,
@@ -99,7 +99,7 @@ export class ListaAlunoComponent implements OnInit {
       this.loader = 'block';
   }
 
-  async addAuxilio(aluno: Aluno) {
+  /*async addAuxilio(aluno: Aluno) {
 
     alert("Matricula" + aluno.matricula)
     //console.log(this.alunos)
@@ -139,7 +139,7 @@ export class ListaAlunoComponent implements OnInit {
       })
     }
 
-  }
+  }*/
 
   valueChange($event, aluno: Aluno) {
 
@@ -157,8 +157,6 @@ export class ListaAlunoComponent implements OnInit {
         aux = new Auxilio();
         aux.almoco = $event.checked;
         aluno.auxilio = aux
-
-        
       }
 
       else {
@@ -237,8 +235,4 @@ export class ListaAlunoComponent implements OnInit {
     }
   }
 
-  editar(aluno:Aluno){
-    sessionStorage.setItem("alunoEdit", JSON.stringify(aluno))
-    this.router.navigate(['/aluno/editar']);
-  }
 }

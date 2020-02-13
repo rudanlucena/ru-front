@@ -1,105 +1,111 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar class="example-toolbar">
-      <button mat-icon-button (click)="snav.toggle()">
-        <mat-icon>restaurant</mat-icon></button>
-      <h1 class="example-app-name">Manager RU</h1>
-    </mat-toolbar>
-  
-    <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav opened #snav id="snav" [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-        <mat-nav-list>
-          <button class="item-menu"  mat-button  [matMenuTriggerFor]="autor">
-            <i class="material-icons md-48">person</i><span class="label-menu"> Aluno</span>
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>restaurant</mat-icon>
+    </button>
+    <h1 class="example-app-name">Manager RU</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav opened #snav id="snav" [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <button class="item-menu"  mat-button  [routerLink]="['/checkin/exibir']">
+          <i class="material-icons md-48">fingerprint</i><span class="label-menu">Chekin</span>
+        </button>
+
+        <button class="item-menu" mat-button [matMenuTriggerFor]="autor">
+          <i class="material-icons md-48">person</i><span class="label-menu"> Aluno</span>
+        </button>
+
+        <mat-menu #autor="matMenu">
+          <button mat-menu-item [routerLink]="['/aluno/cadastro']">
+            <mat-icon>sync</mat-icon>Atualizar Via SUAP
           </button>
-  
-          <mat-menu #autor="matMenu">
-              <button mat-menu-item [routerLink]="['/aluno/cadastro']">
-                <mat-icon>sync</mat-icon>Atualizar Via SUAP</button>
-            <button mat-menu-item [routerLink]="['/aluno/lista']">
-              <mat-icon>list_view</mat-icon>Listar Alunos</button>
-          </mat-menu>
+          <button mat-menu-item [routerLink]="['/aluno/lista']">
+            <mat-icon>list_view</mat-icon>Listar Alunos
+          </button>
+        </mat-menu>
 
 
 
-          <button class="item-menu"  mat-button  [matMenuTriggerFor]="biblioteca">
-              <i class="material-icons md-48">format_list_numbered</i><span class="label-menu"> Comensais</span>
-            </button>
-    
-            <mat-menu #biblioteca="matMenu">
-              <button mat-menu-item [routerLink]="['/comensais']">
-                  <mat-icon>list_view</mat-icon>Listar Comensais
-              </button>
-            </mat-menu>
+        <button class="item-menu" mat-button [matMenuTriggerFor]="biblioteca">
+          <i class="material-icons md-48">format_list_numbered</i><span class="label-menu">Bolsistas</span>
+        </button>
 
-            <button class="item-menu"  mat-button  [matMenuTriggerFor]="auxilio">
-              <i class="material-icons">
-                event
-                </i><span class="label-menu"> Auxilio</span>
-            </button>
-    
-            <mat-menu #auxilio="matMenu">
-              <button mat-menu-item [routerLink]="['/auxilio/cadastro']">
-                  <mat-icon>list_view</mat-icon>Auxilio
-              </button>
-            </mat-menu>
+        <mat-menu #biblioteca="matMenu">
+          <button mat-menu-item [routerLink]="['/aluno/bolsistas']">
+            <mat-icon>list_view</mat-icon>Listar
+          </button>
+        </mat-menu>
 
-            <button class="item-menu"  mat-button  [matMenuTriggerFor]="nutricionista">
-              <i class="material-icons">
-                fitness_center
-                </i><span class="label-menu"> Nutricionista</span>
-            </button>
-    
-            <mat-menu #nutricionista="matMenu">
-              <button mat-menu-item [routerLink]="['/nutricionista/cadastro']">
-                  <mat-icon>add</mat-icon>Cadastro 
-              </button>
+        <button class="item-menu" mat-button [matMenuTriggerFor]="auxilio">
+          <i class="material-icons">
+            event
+          </i><span class="label-menu"> Auxilio</span>
+        </button>
 
-              <button mat-menu-item [routerLink]="['/nutricionista/lista']">
-                <mat-icon>list_view</mat-icon>Listar 
-            </button>
-            </mat-menu>
+        <mat-menu #auxilio="matMenu">
+          <button mat-menu-item [routerLink]="['/auxilio/cadastro']">
+            <mat-icon>list_view</mat-icon>Auxilio
+          </button>
+        </mat-menu>
+
+        <button class="item-menu" mat-button [matMenuTriggerFor]="nutricionista">
+          <i class="material-icons">
+            assignment_turned_in
+          </i><span class="label-menu"> Nutricionista</span>
+        </button>
+
+        <mat-menu #nutricionista="matMenu">
+          <button mat-menu-item [routerLink]="['/nutricionista/cadastro']">
+            <mat-icon>add</mat-icon>Cadastro
+          </button>
+
+          <button mat-menu-item [routerLink]="['/nutricionista/lista']">
+            <mat-icon>list_view</mat-icon>Listar
+          </button>
+        </mat-menu>
 
 
 
-            <button class="item-menu"  mat-button  [matMenuTriggerFor]="assistente">
-              <i class="material-icons">
-                assignment_turned_in
-                </i><span class="label-menu"> Assistente Social</span>
-            </button>
-    
-            <mat-menu #assistente="matMenu">
-              <button mat-menu-item [routerLink]="['/assistente-social/cadastro']">
-                  <mat-icon>add</mat-icon>Cadastro 
-              </button>
+        <button class="item-menu" mat-button [matMenuTriggerFor]="assistente">
+          <i class="material-icons">
+            record_voice_over
+          </i><span class="label-menu"> Assistente Social</span>
+        </button>
 
-              <button mat-menu-item [routerLink]="['/assistente-social/lista']">
-                <mat-icon>list_view</mat-icon>Listar 
-            </button>
-            </mat-menu>
+        <mat-menu #assistente="matMenu">
+          <button mat-menu-item [routerLink]="['/assistente-social/cadastro']">
+            <mat-icon>add</mat-icon>Cadastro
+          </button>
 
-            
+          <button mat-menu-item [routerLink]="['/assistente-social/lista']">
+            <mat-icon>list_view</mat-icon>Listar
+          </button>
+        </mat-menu>
 
-            <button class="item-menu"  mat-button  [matMenuTriggerFor]="solicitacoes">
-                <i class="material-icons">
-                    notifications_active
-                  </i><span class="label-menu"> Solicitações</span>
-              </button>
-      
-              <mat-menu #solicitacoes="matMenu">
-                <button mat-menu-item [routerLink]="['/auxilio/lista-auxilios-temporarios']">
-                    <mat-icon>list_view</mat-icon>Listar Solicitações Pendentes
-                </button>
-                <button mat-menu-item [routerLink]="['/auxilio/lista-auxilios-temporarios-aprovados']">
-                  <mat-icon>list_view</mat-icon>Listar Solicitações Aprovadas
-              </button>
-              </mat-menu>
 
-              
-            
 
-            <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="instituicaoEnsino">
+        <button class="item-menu" mat-button [matMenuTriggerFor]="solicitacoes">
+          <i class="material-icons">
+            notifications_active
+          </i><span class="label-menu"> Solicitações</span>
+        </button>
+
+        <mat-menu #solicitacoes="matMenu">
+          <button mat-menu-item [routerLink]="['/auxilio/lista-auxilios-temporarios']">
+            <mat-icon>list_view</mat-icon>Listar Solicitações Pendentes
+          </button>
+          <button mat-menu-item [routerLink]="['/auxilio/lista-auxilios-temporarios-aprovados']">
+            <mat-icon>list_view</mat-icon>Listar Solicitações Aprovadas
+          </button>
+        </mat-menu>
+
+
+
+
+        <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="instituicaoEnsino">
                 <i class="material-icons md-48">school</i><span class="label-menu"> Instituicão Ensino</span>
                 </button>
       
@@ -162,9 +168,9 @@
           <mat-menu #tipoRegistro="matMenu">
           </mat-menu>-->
 
-          
 
-          <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="usuario">
+
+        <!--<button class="item-menu"  mat-button  [matMenuTriggerFor]="usuario">
             <i class="material-icons md-48">person</i><span class="label-menu"> Usuário</span>
           </button>
   
@@ -177,34 +183,34 @@
   
           <mat-menu #sugestao="matMenu">
           </mat-menu>-->
-        </mat-nav-list>
-      </mat-sidenav>
-  
-      <mat-sidenav-content id="sidenav-content">
-        <router-outlet></router-outlet>
+      </mat-nav-list>
+    </mat-sidenav>
 
-        <!--<app-inicio></app-inicio>-->
+    <mat-sidenav-content id="sidenav-content">
+      <router-outlet></router-outlet>
 
-        <!--<app-cadastro-assunto></app-cadastro-assunto>-->
-        <!--<app-lista-assunto></app-lista-assunto>-->
+      <!--<app-inicio></app-inicio>-->
 
-        <!--<app-cadastro-autor></app-cadastro-autor>-->
-        <!--<app-lista-autor></app-lista-autor>-->
+      <!--<app-cadastro-assunto></app-cadastro-assunto>-->
+      <!--<app-lista-assunto></app-lista-assunto>-->
 
-        <!--<app-cadastro-biblioteca></app-cadastro-biblioteca>-->
-        <!--<app-lista-biblioteca></app-lista-biblioteca>-->
+      <!--<app-cadastro-autor></app-cadastro-autor>-->
+      <!--<app-lista-autor></app-lista-autor>-->
 
-        <!--<app-cadastro-tipo-registro></app-cadastro-tipo-registro>-->
-        <!--<app-lista-tipo-registro></app-lista-tipo-registro>-->
+      <!--<app-cadastro-biblioteca></app-cadastro-biblioteca>-->
+      <!--<app-lista-biblioteca></app-lista-biblioteca>-->
 
-        <!--<app-cadastro-instituicao-ensino></app-cadastro-instituicao-ensino>-->
-        <!--<app-lista-instituicao-ensino></app-lista-instituicao-ensino>-->
+      <!--<app-cadastro-tipo-registro></app-cadastro-tipo-registro>-->
+      <!--<app-lista-tipo-registro></app-lista-tipo-registro>-->
 
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-  
-  <!--<mat-toolbar class="corMenu">
+      <!--<app-cadastro-instituicao-ensino></app-cadastro-instituicao-ensino>-->
+      <!--<app-lista-instituicao-ensino></app-lista-instituicao-ensino>-->
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<!--<mat-toolbar class="corMenu">
     <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" >
       <img src="../../../assets/logos/Logo - iEscolar.png" height="45px" width="30px">
     </mat-toolbar-row>

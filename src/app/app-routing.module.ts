@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginModule' },
   { path: 'inicio', loadChildren: './pages/inicio/inicio.module#InicioModule' },
   { path: 'aluno', loadChildren: './pages/aluno/aluno.module#AlunoModule' },
+  { path: 'checkin', loadChildren: './pages/checkin/checkin.module#CheckinModule' },
   { path: 'auxilio', loadChildren: './pages/auxilio/auxilio.module#AuxilioModule' },
   { path: 'assistente-social', loadChildren: './pages/assistente-social/assistente-social.module#AssistenteSocialModule' },
   { path: 'nutricionista', loadChildren: './pages/nutricionista/nutricionista.module#NutricionistaModule' },

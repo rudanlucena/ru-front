@@ -1,0 +1,42 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <zxing-scanner (scanSuccess)="onCodeResult($event)"></zxing-scanner>
+  
+  
+
+  <mat-card class="example-card">
+    <mat-progress-bar *ngIf="buscandoAluno" mode="indeterminate" value="40"></mat-progress-bar>
+    <mat-card-header>
+      <section class="results" *ngIf="qrResultString">
+        <!--<div>
+          <small>Matricula: </small>
+          <strong>{{ qrResultString }}</strong>
+        </div>
+        <button mat-button (click)="clearResult()">&times;</button>-->
+      </section>
+      <mat-card-title>{{aluno.nome}}</mat-card-title>
+      <mat-card-subtitle>{{aluno.curso}}</mat-card-subtitle>
+      <mat-card-subtitle>{{aluno.matricula}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image *ngIf="aluno.image" src="{{aluno.image}}" alt="Photo of a Shiba Inu">
+    <!--<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+    <mat-card-content>
+      <h2 class="checkin-success" *ngIf="aluno.matricula">
+        Refeição Liberada com sucesso <i class="material-icons">
+          check_circle
+          </i>
+      </h2>
+
+      <h2 class="checkin-fail" *ngIf="!aluno.matricula">
+        Não foi possivel encontrar uma refeição para este aluno <i class="material-icons">
+          error
+          </i>
+      </h2>
+    </mat-card-content>
+    <!--<mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>-->
+  </mat-card>
+
+
+  </div>
