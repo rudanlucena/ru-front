@@ -5,6 +5,7 @@ import { Aluno } from '../models/aluno';
 import { Periodo } from '../models/periodo';
 import { Nutricionista } from '../models/Nutricionista';
 import { AssistenteSocial } from '../models/AssistenteSocial';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = new HttpHeaders(
   {
@@ -21,7 +22,7 @@ const httpOptions = new HttpHeaders(
 
 export class AssistenteSocialService {
 
-  private url = "http://localhost:9999/assistentes";
+  private url = environment.host+"assistentes";
 
   constructor(private http: HttpClient) {
   }

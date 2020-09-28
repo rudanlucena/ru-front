@@ -21,7 +21,7 @@ const httpOptions = new HttpHeaders(
 
 export class NutricionistaService {
 
-  private url = "http://localhost:9999/nutricionistas";
+  private url = environment.host+"nutricionistas";
 
   constructor(private http: HttpClient) {
   }

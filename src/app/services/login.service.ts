@@ -10,7 +10,7 @@ import { Login } from '../models/Login';
 })
 export class LoginService {
   
-  private url = environment.host + 'login';
+  private url = environment.host+"login";
   constructor(private http: HttpClient) { }
   
   login(login : Login) : Observable<HttpResponse<Token>>{

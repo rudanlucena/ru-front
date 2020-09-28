@@ -20,7 +20,7 @@ const httpOptions = new HttpHeaders(
 
 export class ChefeService {
 
-  private url = "http://localhost:9999/periodos";
+  private url = environment.host+"periodos";
 
   constructor(private http: HttpClient) {
   }

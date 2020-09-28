@@ -22,7 +22,7 @@ const httpOptions = new HttpHeaders(
 
 export class AuxilioTemporarioService {
 
-  private url = "http://localhost:9999/auxiliosTemporarios";
+  private url = environment.host+"auxiliosTemporarios";
 
 
   private urlAlunosSUAP = "/api";

@@ -20,7 +20,7 @@ const httpOptions = new HttpHeaders(
 
 export class AlunoService {
 
-  private url = "http://localhost:9999/alunos";
+  private url = environment.host+"alunos";
 
   private urlAlunosSUAP = "/proxy";
 
