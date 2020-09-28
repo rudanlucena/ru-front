@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  host: 'http://localhost:9999/'
-  //host: 'http://biblioteca-dev.sa-east-1.elasticbeanstalk.com/'
+  //host: 'http://localhost:9999/'
+  host: 'https://back-ru.herokuapp.com/'
 };
 
 /*
