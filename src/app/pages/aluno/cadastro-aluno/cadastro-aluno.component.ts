@@ -125,7 +125,7 @@ export class CadastroAlunoComponent implements OnInit {
     ];
   }
 
-  public async getAluno(id: number) {
+  public async getAluno() {
     this.conectandoSuap = true;
     try {
       let r = await this.alunoService.getAll()
