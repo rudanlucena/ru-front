@@ -48,6 +48,12 @@ export class AuxilioTemporarioService {
     return await this.http.post<AuxilioTemporario>(url, auxilio).toPromise();
   }
 
+  public async indeferirAuxilioTemporario(auxilio: AuxilioTemporario): Promise<AuxilioTemporario> {
+    auxilio.status = "indeferido"
+    const url = `${this.url}`;
+    return await this.http.post<AuxilioTemporario>(url, auxilio).toPromise();
+  }
+
   public async editar(auxilio:AuxilioTemporario):Promise<AuxilioTemporario> {
     const url = `${this.url}`;
     return await this.http.post<AuxilioTemporario>(url, auxilio).toPromise();

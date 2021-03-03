@@ -9,6 +9,6 @@ export class Aluno {
 	public cota:string
 	public curso:Curso
 	public image?:any
-
+	public senha?:string
 	public auxilio:Auxilio
 }

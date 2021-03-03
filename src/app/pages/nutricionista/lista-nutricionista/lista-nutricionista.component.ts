@@ -37,15 +37,35 @@ export class ListaNutricionistaComponent implements OnInit {
       },
       error => {
         Swal.fire({
-          html: `<h3>Não foi possível carregar a lista!</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!'
         })
         this.displayLoader();
       }
     );
+  }
+
+  alertRemoverAssistente(id:number){
+    Swal.fire({
+      title: 'Remover?',
+      text: "Você realmente deseja remover esse usuraio?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'remover'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.removerNutricionista(id).then(()=>{
+          Swal.fire(
+            'Deletado!',
+            'Usuario removido com sucesso',
+            'success'
+          )
+        })
+      }
+    })
   }
 
   displayLoader() {

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AssistenteSocial } from 'src/app/models/AssistenteSocial';
 import { AssistenteSocialService } from 'src/app/services/assistente-social.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-lista-assistente-social',
@@ -18,7 +19,7 @@ export class ListaAssistenteSocialComponent implements OnInit {
   loader = 'none';
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  constructor(private assistenteSocialService: AssistenteSocialService, private router: Router) { }
+  constructor(private alertService:AlertService, private assistenteSocialService: AssistenteSocialService, private router: Router) { }
 
   ngOnInit() {
     
@@ -35,13 +36,7 @@ export class ListaAssistenteSocialComponent implements OnInit {
         console.log(this.assistentes);
       },
       error => {
-        Swal.fire({
-          html: `<h3>Não foi possível carregar a lista!</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
-        })
+        this.alertService.error();
         this.displayLoader();
       }
     );
@@ -66,6 +61,28 @@ export class ListaAssistenteSocialComponent implements OnInit {
       
     }
     console.log(id)
+  }
+
+  alertRemoverAssistente(id:number){
+    Swal.fire({
+      title: 'Remover?',
+      text: "Você realmente deseja deletar esse usuario?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'remover'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.removerAssistente(id).then(()=>{
+          Swal.fire(
+            'Deletado!',
+            'Item Excluido com sucesso.',
+            'success'
+          )
+        })
+      }
+    })
   }
 
   editarAssistente(assistente:AssistenteSocial){

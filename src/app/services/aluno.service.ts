@@ -4,6 +4,7 @@ import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Aluno } from '../models/aluno';
 import { Auxilio } from '../models/auxilio';
+import { Relatorio } from '../models/Relatorio';
 
 const httpOptions = new HttpHeaders(
   {
@@ -45,6 +46,14 @@ export class AlunoService {
 
   listarBolsistas(): Observable<HttpResponse<Aluno[]>> {
     return this.http.get<Aluno[]>(this.url+"/bolsistas", { headers: httpOptions, observe: 'response' });
+  }
+
+  listarRelatorios(): Observable<HttpResponse<Relatorio[]>> {
+    return this.http.get<Relatorio[]>(this.url+"/relatorios", { headers: httpOptions, observe: 'response' });
+  }
+
+  listarRelatoriosx(dt1, dt2): Observable<HttpResponse<Relatorio[]>> {
+    return this.http.get<Relatorio[]>(this.url+"/relatorios/"+dt1+"/"+dt2, { headers: httpOptions, observe: 'response' });
   }
 
   public async getAll():Promise<Aluno[]>{  

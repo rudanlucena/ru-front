@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/models/aluno';
 import { AlunoService } from 'src/app/services/aluno.service';
 import { Router } from '@angular/router';
-import swal from 'sweetalert2';
+import Swal from 'sweetalert2'; 
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
-  selector: 'app-cadastro-aluno',
+  selector: 'app-cadastro-aluno', 
   templateUrl: './cadastro-aluno.component.html',
   styleUrls: ['./cadastro-aluno.component.css']
 })
@@ -28,7 +29,8 @@ export class CadastroAlunoComponent implements OnInit {
   tipoImpressao = "suap"
 
   constructor(private alunoService: AlunoService,
-    private router: Router
+    private router: Router,
+    private alertService:AlertService
   ) { 
     this.alunosFiltrados =[]
   }
@@ -44,8 +46,7 @@ export class CadastroAlunoComponent implements OnInit {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function () {
-      //me.modelvalue = reader.result;
-      //me.aluno.foto = reader.result.toString();
+
     };
     reader.onerror = function (error) {
       console.log('Error: ', error);
@@ -59,30 +60,13 @@ export class CadastroAlunoComponent implements OnInit {
     try {
       await this.alunoService.salvar(alunos).subscribe(
         res => {
-          swal.fire({
-            html: `<h3>Salvo com sucesso!</h3>`,
-            type: 'success',
-            width: 400,
-            heightAuto: true,
-            confirmButtonColor: '#39B54A'
-          }).then((result) => {
+            this.alertService.success()
             this.router.navigate(['/aluno/lista']);
-          })
         }
-
       );
 
-
     } catch (error) {
-      console.log(error)
-      console.log("asdasdas")
-      swal.fire({
-        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
+      this.alertService.error()
     }
 
   }
@@ -136,27 +120,15 @@ export class CadastroAlunoComponent implements OnInit {
       
       this.alunos.forEach(element => {
         if(element.curso.nome.match(/CAMPUS CAJAZEIRAS/) && element.situacao == 'Matriculado'){
+          element.senha = "1234"
           this.alunosFiltrados.push(element);
         }
       });
 
-      console.log("ALunos filtrados: "+this.alunosFiltrados.length)
-
-      //alunosFiltrados = this.alunos
-      //console.log(this.alunosFiltrados)
-
       await this.salvarAluno(this.alunosFiltrados);
       this.alunosFiltrados = []
     } catch (e) {
-      console.log(e)
-      swal.fire({
-        html: `<h3>Não Foi Possível Realizar a operação</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
-      console.log("*Aluno Não Encontrado:");
+      this.alertService.error()
       this.conectandoSuap = false
     }
     

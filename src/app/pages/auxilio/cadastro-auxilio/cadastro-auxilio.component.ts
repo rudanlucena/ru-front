@@ -28,14 +28,12 @@ export class CadastroAuxilioComponent implements OnInit {
     try {
       await this.periodoService.salvar(this.periodo).subscribe(
         res => {
-          Swal.fire({
-            html: `<h3>Salvo com sucesso!</h3>`,
-            type: 'success',
-            width: 400,
-            heightAuto: true,
-            confirmButtonColor: '#39B54A'
-          }).then((result) => {
-            this.router.navigate(['/aluno/lista']);
+          Swal.fire(
+            'Success!',
+            'Salvo com sucesso.',
+            'success'
+          ).then((result) => {
+            this.router.navigate(['/auxilio/cadastro']);
           })
         }
 
@@ -45,13 +43,11 @@ export class CadastroAuxilioComponent implements OnInit {
     } catch (error) {
       console.log(error)
       console.log("asdasdas")
-      Swal.fire({
-        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
+      Swal.fire(
+        'Error!',
+        'Não foi posivel salvar o periodo.',
+        'error'
+      )
     }
 
   }
@@ -63,13 +59,12 @@ export class CadastroAuxilioComponent implements OnInit {
         
       },
       error => {
-        Swal.fire({
-          html: `<h3>Não foi possível carregar a lista!</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
-        })
+        console.log()
+        Swal.fire(
+          'Registre um periodo',
+          'Nenhum Periodo Registrado Ainda',
+          'info'
+        )
       }
     );
   }

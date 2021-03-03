@@ -13,23 +13,23 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
-import { InicioModule } from './pages/inicio/inicio.module';
 import { ListaAlunoModule } from './pages/aluno/lista-aluno/lista-aluno.module';
 import { CadastroAlunoModule } from './pages/aluno/cadastro-aluno/cadastro-aluno.module';
 
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+import { BrMaskerModule } from 'br-mask';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-
     MenuModule,
-    InicioModule,
-
     ListaAlunoModule,
     CadastroAlunoModule,
-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -44,10 +44,11 @@ import { CadastroAlunoModule } from './pages/aluno/cadastro-aluno/cadastro-aluno
     MatCardModule,
     MatSidenavModule,
     MatListModule,
+    BrMaskerModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }  
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { } 

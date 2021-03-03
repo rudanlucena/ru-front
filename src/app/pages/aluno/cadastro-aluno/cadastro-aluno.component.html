@@ -98,9 +98,13 @@
       <div fxLayout="row wrap">
 
         <div class="example-button-row">
-          <button mat-fab color="primary" (click)="getAluno()">Sincronizar <i class="material-icons">
-              sync
-            </i></button>
+
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="getAluno()"><span class="material-icons">
+              cached
+              </span>Atualizar via Suap</button>
+            
+          </div>
         </div>
 
       </div>

@@ -10,8 +10,8 @@
       </div>
 
       <p><b>Periodo: </b>{{periodo.nome}}</p>
-      <p><b>Inicio: </b>{{periodo.inicio}}</p>
-      <p><b>Vencimento: </b>{{periodo.fim}}</p>
+      <p><b>Inicio: </b>{{periodo.inicio | date: 'dd/MM/yyyy'}}</p>
+      <p><b>Vencimento: </b>{{periodo.fim | date: 'dd/MM/yyyy'}}</p>
 
       <div *ngIf="loader == 'none'">
         <mat-form-field>
@@ -79,4 +79,4 @@
       <mat-paginator [pageSize]="20"></mat-paginator>
     </mat-card-content>
   </mat-card>
-</div>
+</div> 

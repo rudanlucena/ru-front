@@ -3,6 +3,7 @@ import { AssistenteSocial } from 'src/app/models/AssistenteSocial';
 import Swal from 'sweetalert2';
 import { AssistenteSocialService } from 'src/app/services/assistente-social.service';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-editar-assistente-social',
@@ -12,13 +13,14 @@ import { Router } from '@angular/router';
 export class EditarAssistenteSocialComponent implements OnInit {
   assistente: AssistenteSocial
 
-  constructor(private assistenteSocialService: AssistenteSocialService, private router: Router) {
+  constructor(private assistenteSocialService: AssistenteSocialService,
+    private alertService:AlertService, private router: Router) {
     this.assistente = new AssistenteSocial();
     this.assistente = JSON.parse(localStorage.getItem("assistenteEdit"))
   }
 
   ngOnInit() {
-    
+
   }
 
   async salvarAssistente() {
@@ -26,28 +28,11 @@ export class EditarAssistenteSocialComponent implements OnInit {
     try {
       await this.assistenteSocialService.salvar(this.assistente).subscribe(
         res => {
-          Swal.fire({
-            html: `<h3>Salvo com sucesso!</h3>`,
-            type: 'success',
-            width: 400,
-            heightAuto: true,
-            confirmButtonColor: '#39B54A'
-          }).then((result) => {
-            this.router.navigate(['/assistente-social/lista']);
-          })
-        }
-
-      );
-
-
+          this.alertService.success();
+          this.router.navigate(['/assistente-social/lista']);
+        })
     } catch (error) {
-      Swal.fire({
-        html: `<h3>Não foi possível realizar a operação</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
+      this.alertService.error();
     }
 
   }

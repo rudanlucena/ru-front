@@ -36,13 +36,11 @@ export class ListarAuxiliosTemporariosComponent implements OnInit {
         console.log(this.solicitacoes);
       },
       error => {
-        Swal.fire({
-          html: `<h3>Não foi possível carregar a lista!</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
-        })
+        Swal.fire(
+          'Error!',
+          'Não foi posivel carregar a lista.',
+          'error'
+        )
         this.displayLoader();
       }
     );
@@ -107,6 +105,11 @@ export class ListarAuxiliosTemporariosComponent implements OnInit {
     }
   }
 
-  
+  alertaRemover(aux:AuxilioTemporario){
+    this.auxilioTemporarioService.indeferirAuxilioTemporario(aux).then(()=>{
+      this.lista();
+      console.log("success")
+    })
+  }
 
 }

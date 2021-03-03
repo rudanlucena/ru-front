@@ -1,0 +1,43 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>
+      Horarios
+    </mat-card-title>
+    <hr />
+    <mat-card-content>
+      <div fxLayout="row wrap">
+        <div class="formPeriodo">
+        <div fxFlex="90">
+
+          <label><b>Almoço:</b> </label>
+
+          <mat-form-field>
+            <input matInput placeholder="Inicio" [(ngModel)]="horario.almoco.abertura" name="inicio" [brmasker]="{mask:'00:00:00', len:5, userCaracters: false}">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Termino" [(ngModel)]="horario.almoco.fechamento" name="termino" [brmasker]="{mask:'00:00:00', len:5, userCaracters: false}">
+          </mat-form-field>
+        </div>
+        <div fxFlex="90">
+
+          <label><b>Jantar:</b> </label>
+
+          <mat-form-field>
+            <input matInput placeholder="Inicio" [(ngModel)]="horario.jantar.abertura" name="inicio" [brmasker]="{mask:'00:00:00', len:5, userCaracters: false}">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Termino" [(ngModel)]="horario.jantar.fechamento" name="termino" [brmasker]="{mask:'00:00:00', len:5, userCaracters: false}">
+          </mat-form-field>
+
+        </div>
+      </div>
+      </div>
+      <div class="example-button-row" align="right">
+        <button mat-raised-button (click)="salvarHorario()">Atualizar</button>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</div>

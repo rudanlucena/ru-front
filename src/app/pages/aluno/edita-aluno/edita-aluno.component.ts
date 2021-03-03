@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { AlunoService } from 'src/app/services/aluno.service';
 import { Aluno } from 'src/app/models/aluno';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-edita-aluno',
@@ -13,31 +14,30 @@ import { Aluno } from 'src/app/models/aluno';
 })
 export class EditaAlunoComponent implements OnInit {
   webcamCaptute
-  aluno:Aluno;
+  aluno: Aluno;
   mostrarFoto = false
   // latest snapshot
   public webcamImage: WebcamImage = null;
 
-  constructor(private router:Router, private alunoService:AlunoService) {
+  constructor(private router: Router,
+    private alunoService: AlunoService,
+    private alertService: AlertService) {
     this.aluno = JSON.parse(sessionStorage.getItem("alunoEdit"));
-    if(this.aluno.image!=null){
+    if (this.aluno.image != null) {
       this.webcamCaptute = false
       this.mostrarFoto = true
       //webcamImage = true
     }
-    else{
+    else {
       this.webcamCaptute = true
     }
-   }
+  }
 
   ngOnInit() {
   }
 
   public seconds: number;
   private trigger: Subject<void> = new Subject<void>();
-  
-
-  
 
   public triggerSnapshot(): void {
     this.seconds = 1;
@@ -66,43 +66,27 @@ export class EditaAlunoComponent implements OnInit {
     return this.trigger.asObservable();
   }
 
-  novaImagem(){
+  novaImagem() {
     this.webcamCaptute = true
     this.webcamImage = null
     this.mostrarFoto = false
   }
 
   async salvarAluno() {
-    
+
     this.aluno.image = this.webcamImage.imageAsDataUrl;
     //
     try {
       await this.alunoService.atualizar(this.aluno).subscribe(
         res => {
-          Swal.fire({
-            html: `<h3>Salvo com sucesso!</h3>`,
-            type: 'success',
-            width: 400,
-            heightAuto: true,
-            confirmButtonColor: '#39B54A'
-          }).then((result) => {
-            this.router.navigate(['/aluno/lista']);
-          })
+          this.alertService.success()
+          this.router.navigate(['/aluno/lista']);
         }
 
       );
 
-
     } catch (error) {
-      console.log(error)
-      console.log("asdasdas")
-      Swal.fire({
-        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
+      this.alertService.error()
     }
 
   }

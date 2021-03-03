@@ -32,13 +32,11 @@ export class ListarAuxiliosTemporariosAprovadosComponent implements OnInit {
         console.log(this.solicitacoes);
       },
       error => {
-        Swal.fire({
-          html: `<h3>Não foi possível carregar a lista!</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
-        })
+        Swal.fire(
+          'Error!',
+          'Não foi posivel carregar a lista.',
+          'error'
+        )
         this.displayLoader();
       }
       

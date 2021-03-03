@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 export class AppComponent {
   title = 'biblioteca-front';
   mobileQuery: MediaQueryList;
+  logado:boolean
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
@@ -34,6 +37,15 @@ export class AppComponent {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+
+    
+  }
+
+  ngOnInit() {
+    console.log("OnInit")
+    let x = sessionStorage.getItem("logado")
+    if(x=="true")
+      this.logado=true
   }
 
   ngOnDestroy(): void {

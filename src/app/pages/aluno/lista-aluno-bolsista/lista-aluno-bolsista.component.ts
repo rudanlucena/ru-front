@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 import { Auxilio } from 'src/app/models/auxilio';
 import { Subject, Observable } from 'rxjs';
 import { WebcamImage } from 'ngx-webcam';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-lista-aluno-bolsista',
@@ -24,10 +25,12 @@ export class ListaAlunoBolsistaComponent implements OnInit {
   teste
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  constructor(private alunoService: AlunoService, private periodoService: PeriodoService, private router: Router) { }
+  constructor(private alunoService: AlunoService,
+     private periodoService: PeriodoService,
+      private router: Router,
+      private alertService:AlertService) { }
 
   ngOnInit() {
-
     this.lista();
     this.listaPeriodo();
   }
@@ -44,34 +47,23 @@ export class ListaAlunoBolsistaComponent implements OnInit {
         console.log(this.autores);
       },
       error => {
-        Swal.fire({
-          html: `<h3>Não foi possível carregar a lista!</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
-        })
+        this.alertService.error();
         this.displayLoader();
       }
     );
-
-
   }
 
   listaPeriodo() {
     this.periodoService.listar().subscribe(
       res => {
         this.periodo = res.body;
-
       },
       error => {
-        Swal.fire({
-          html: `<h3>Não foi possível carregar o periodo</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
-        })
+        Swal.fire(
+          'Error!',
+          'Não foi possivel carregar o periodo.',
+          'error'
+        )
       }
     );
   }
@@ -80,8 +72,6 @@ export class ListaAlunoBolsistaComponent implements OnInit {
     try {
       let r = await this.alunoService.getAll()
       console.log("*Aluno Encontrado:");
-
-
     } catch (e) {
       console.log("*Aluno Não Encontrado:");
     }
@@ -99,50 +89,7 @@ export class ListaAlunoBolsistaComponent implements OnInit {
       this.loader = 'block';
   }
 
-  /*async addAuxilio(aluno: Aluno) {
-
-    alert("Matricula" + aluno.matricula)
-    //console.log(this.alunos)
-    //this.formatData();
-    //
-    try {
-
-      let aux: Auxilio = new Auxilio;
-      aux.almoco = true;
-      aux.jantar = true;
-
-      await this.alunoService.addAuxilio(aux, aluno.matricula).subscribe(
-        res => {
-          Swal.fire({
-            html: `<h3>Salvo com sucesso!</h3>`,
-            type: 'success',
-            width: 400,
-            heightAuto: true,
-            confirmButtonColor: '#39B54A'
-          }).then((result) => {
-            this.router.navigate(['/aluno/lista']);
-          })
-        }
-
-      );
-
-
-    } catch (error) {
-      console.log(error)
-      console.log("asdasdas")
-      Swal.fire({
-        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
-    }
-
-  }*/
-
   valueChange($event, aluno: Aluno) {
-
     //set the two-way binding here for the specific unit with the event
     console.log("===========================")
     console.log($event.checked);
@@ -166,29 +113,13 @@ export class ListaAlunoBolsistaComponent implements OnInit {
 
       await this.alunoService.addAuxilio(aux, aluno.matricula).subscribe(
         res => {
-          /*Swal.fire({
-            html: `<h3>Salvo com sucesso!</h3>`,
-            type: 'success',
-            width: 400,
-            heightAuto: true,
-            confirmButtonColor: '#39B54A'
-          }).then((result) => {
-            this.router.navigate(['/aluno/lista']);
-          })*/
+          
         }
 
       );
 
     } catch (error) {
-      console.log(error)
-      console.log("asdasdas")
-      Swal.fire({
-        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
+      this.alertService.error();
     }
   }
 
@@ -209,29 +140,13 @@ export class ListaAlunoBolsistaComponent implements OnInit {
 
       await this.alunoService.addAuxilio(aux, aluno.matricula).subscribe(
         res => {
-          /*Swal.fire({
-            html: `<h3>Salvo com sucesso!</h3>`,
-            type: 'success',
-            width: 400,
-            heightAuto: true,
-            confirmButtonColor: '#39B54A'
-          }).then((result) => {
-            this.router.navigate(['/aluno/lista']);
-          })*/
+          
         }
 
       );
 
     } catch (error) {
-      console.log(error)
-      console.log("asdasdas")
-      Swal.fire({
-        html: `<h3>Não foi possível salvar o Aluno!</h3>`,
-        type: 'error',
-        width: 400,
-        heightAuto: true,
-        confirmButtonColor: '#C1272D'
-      })
+      this.alertService.error();
     }
   }
 

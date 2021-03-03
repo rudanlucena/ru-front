@@ -6,6 +6,7 @@ import swal from 'sweetalert2';
 import { Login } from 'src/app/models/Login';
 import { Router } from '@angular/router';
 import { Token } from 'src/app/models/Token';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -23,11 +24,23 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    let token = sessionStorage.getItem("logado")
+    if(token=="true"){
+      this.router.navigate(['relatorio/comensais'])
+    }
   }
 
   //metodo de login
+
+  
   loginUsuario() {
-    try {
+
+    if(this.login.username=="admin@gmail.com" && this.login.password=="123456"){
+      sessionStorage.setItem("logado", "true")
+      window.location.href="relatorio/comensais"
+      this.router.navigate(['relatorio/comensais']);
+    }
+    /*try {
       this.loginService.login(this.login).subscribe(res => {
         this.token.Authorization = res.body.Authorization;
         //salvando token na sessao
@@ -35,16 +48,14 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/pages/inicio']);
       },
       error => {
-        swal.fire({
-          html: `<h3>Não foi possível efetuar o login!</h3>`,
-          type: 'error',
-          width: 400,
-          heightAuto: true,
-          confirmButtonColor: '#C1272D'
-        })
+        Swal.fire(
+          'Error!',
+          'Não foi posivel realizar a operação.',
+          'error'
+        )
       });
     } catch (e) {
       console.log(e);
-    }
+    }*/
   }
 }
