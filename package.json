@@ -25,7 +25,7 @@
     "@zxing/ngx-scanner": "^2.0.1",
     "br-mask": "0.0.10",
     "html2canvas": "^1.0.0-rc.7",
-    "jspdf": "^2.2.0",
+    "jspdf": "^2.3.1",
     "material-design-icons": "^3.0.1",
     "ngx-alerts": "^3.4.5",
     "ngx-mask": "^7.9.9",
